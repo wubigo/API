@@ -1,5 +1,3 @@
-// Copyright 2017 The go-github AUTHORS. All rights reserved.
-//
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -13,6 +11,7 @@ import (
 	"fmt"
 	"golang.org/x/oauth2"
 	"reflect"
+	"time"
 
 	"github.com/google/go-github/github"
 )
@@ -33,25 +32,60 @@ func FetchRepos(username string) ([]*github.Repository, error) {
 	return repos, err
 }
 
-//commit a new file with `content`
-func CreateFile(repo, path string) {
-	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: "at"})
+func DeleteFile(repo, path string){
+
+	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: ""})
 	ctx := context.Background()
 	tc := oauth2.NewClient(ctx, ts)
 	client := github.NewClient(tc)
 	if client == nil {
-
+		fmt.Println("client is not initialized")
+		return
 	}
-	message := "m"
-	content := []byte("file content")
+
+	message := "delete"
+	sha := "20387b2d2373f72ac1f27c2b488e824f74162299"
+	repositoryContentsOptions := &github.RepositoryContentFileOptions{
+		Message:   &message,
+		SHA:       &sha,
+		Committer: &github.CommitAuthor{Name: github.String("wubigo"), Email: github.String("wu@bigo")},
+	}
+	deleteResponse, _, err := client.Repositories.DeleteFile(ctx, "wubigo", repo, path, repositoryContentsOptions)
+	if err != nil {
+		fmt.Printf("Repositories.DeleteFile returned error: %v\n", err)
+	}
+	want := &github.RepositoryContentResponse{
+		Content: nil,
+		Commit: github.Commit{
+			Message: github.String("delete"),
+			SHA:     github.String("f5f369044773ff9c6383c087466d12adb6fa0828"),
+		},
+	}
+	if !reflect.DeepEqual(deleteResponse, want) {
+		fmt.Printf("Repositories.DeleteFile returned %+v, want %+v", deleteResponse, want)
+	}
+}
+
+//commit a new file with `content`
+func CreateFile(repo, path string) {
+	ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: ""})
+	ctx := context.Background()
+	tc := oauth2.NewClient(ctx, ts)
+	client := github.NewClient(tc)
+	if client == nil {
+		fmt.Println("client is not initialized")
+		return
+	}
+	message := "commit messsage"
+	content := []byte("file content commit at " + time.Now().String())
 
 	repositoryContentsOptions := &github.RepositoryContentFileOptions{
 		Message:   &message,
 		Content:   content,
-		Committer: &github.CommitAuthor{Name: github.String("n"), Email: github.String("e")},
+		Committer: &github.CommitAuthor{Name: github.String("wubigo"), Email: github.String("wu@bigo")},
 	}
 
-	createResponse, _, err := client.Repositories.CreateFile(ctx, "wubigo", repo, path, repositoryContentsOptions)
+	createResponse, resp, err := client.Repositories.CreateFile(ctx, "wubigo", repo, path, repositoryContentsOptions)
 	if err != nil {
 		fmt.Printf("Repositories.CreateFile returned error: %v\n", err)
 	}
@@ -62,10 +96,14 @@ func CreateFile(repo, path string) {
 			SHA:     github.String("f5f369044773ff9c6383c087466d12adb6fa0828"),
 		},
 	}
+	if ( resp != nil ){
+		fmt.Printf("Resp from CreateFile: %v\n", resp)
+	}
+
 	if !reflect.DeepEqual(createResponse, want) {
 		fmt.Printf("Repositories.CreateFile returned %+v, want %+v\n", createResponse, want)
 	}
-
+    fmt.Printf("sha=%v\n", *createResponse.SHA)
 
 
 
@@ -106,6 +144,6 @@ func main() {
 		}
 
 	}
-
-	CreateFile("API", "kabla.yaml")
+	DeleteFile("API", "kabla.yaml")
+	//CreateFile("API", "kabla.yaml")
 }
