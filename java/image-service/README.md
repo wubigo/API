@@ -21,5 +21,5 @@ docker run -it --rm --network host  --name image-service image-service:v0.1
 
 
 ```
-docker run -it --rm --network host  --name image-service2 image-service:v0.1  exec java -jar image-service-0.1.jar --server.port=8801
+docker run -it --rm --network host  --name image-service2 image-service:v0.1  "exec java -jar image-service-0.1.jar --server.port=8801"
 ```

@@ -20,5 +20,5 @@ docker run -it --rm --network host  --name image-gallery image-gallery:v0.1
 
 
 ```
-docker run -it --network host  --name image-gallery image-gallery:v0.1 exec java -jar image-gallery-0.1.jar --server.port=8301
+docker run -it --network host  --name image-gallery image-gallery:v0.1 "exec java -jar image-gallery-0.1.jar --server.port=8301"
 ```
