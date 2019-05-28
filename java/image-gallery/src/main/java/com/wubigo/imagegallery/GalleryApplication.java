@@ -12,20 +12,20 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 public class GalleryApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GalleryApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GalleryApplication.class, args);
+    }
 
 }
 
 
 @Configuration
 class RestTemplateConfig {
-	
-	// Create a bean for restTemplate to call services
-	@Bean
-	@LoadBalanced		// Load balance between service instances running at different ports.
-	public RestTemplate restTemplate() {
-	    return new RestTemplate();
-	}
+
+    // Create a bean for restTemplate to call services
+    @Bean
+    @LoadBalanced        // Load balance between service instances running at different ports.
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }

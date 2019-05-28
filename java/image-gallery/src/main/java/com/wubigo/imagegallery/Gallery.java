@@ -3,30 +3,30 @@ package com.wubigo.imagegallery;
 import java.util.List;
 
 public class Gallery {
-	private int id;
-	private List<Object> images;
-	
-	public Gallery() {
-	}
+    private int id;
+    private List<Object> images;
 
-	public Gallery(int galleryId) {
-		this.id = galleryId;
-	}
+    public Gallery() {
+    }
 
-	public int getId() {
-		return id;
-	}
+    public Gallery(int galleryId) {
+        this.id = galleryId;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public List<Object> getImages() {
-		return images;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setImages(List<Object> images) {
-		this.images = images;
-	}
-	
+    public List<Object> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Object> images) {
+        this.images = images;
+    }
+
 }

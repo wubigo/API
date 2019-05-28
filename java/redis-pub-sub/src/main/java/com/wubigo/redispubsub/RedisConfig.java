@@ -15,41 +15,41 @@ import org.springframework.data.redis.serializer.GenericToStringSerializer;
 @Configuration
 @ComponentScan("com.wubigo.redispubsub")
 public class RedisConfig {
- 
-  @Bean
-  JedisConnectionFactory jedisConnectionFactory() {
-    return new JedisConnectionFactory();
-  }
- 
-  @Bean
-  public RedisTemplate<String, Object> redisTemplate() {
-    final RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
-    template.setConnectionFactory(jedisConnectionFactory());
-    template.setValueSerializer(new GenericToStringSerializer<Object>(Object.class));
-    return template;
-  }
- 
-  @Bean
-  MessageListenerAdapter messageListener() {
-    return new MessageListenerAdapter(new CustomerInfoSubscriber());
-  }
- 
-  @Bean
-  RedisMessageListenerContainer redisContainer() {
-    final RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-    container.setConnectionFactory(jedisConnectionFactory());
-    container.addMessageListener(messageListener(), topic());
-    container.setTaskExecutor(Executors.newFixedThreadPool(4));
-    return container;
-  }
- 
-  @Bean
-  CustomerInfoPublisher redisPublisher() {
-    return new RedisCustomerInfoPublisher(redisTemplate(), topic());
-  }
- 
-  @Bean
-  ChannelTopic topic() {
-    return new ChannelTopic("pubsub:jsa-channel");
-  }
+
+    @Bean
+    JedisConnectionFactory jedisConnectionFactory() {
+        return new JedisConnectionFactory();
+    }
+
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate() {
+        final RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
+        template.setConnectionFactory(jedisConnectionFactory());
+        template.setValueSerializer(new GenericToStringSerializer<Object>(Object.class));
+        return template;
+    }
+
+    @Bean
+    MessageListenerAdapter messageListener() {
+        return new MessageListenerAdapter(new CustomerInfoSubscriber());
+    }
+
+    @Bean
+    RedisMessageListenerContainer redisContainer() {
+        final RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(jedisConnectionFactory());
+        container.addMessageListener(messageListener(), topic());
+        container.setTaskExecutor(Executors.newFixedThreadPool(4));
+        return container;
+    }
+
+    @Bean
+    CustomerInfoPublisher redisPublisher() {
+        return new RedisCustomerInfoPublisher(redisTemplate(), topic());
+    }
+
+    @Bean
+    ChannelTopic topic() {
+        return new ChannelTopic("pubsub:jsa-channel");
+    }
 }
