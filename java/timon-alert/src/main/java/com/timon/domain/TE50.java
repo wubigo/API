@@ -12,8 +12,11 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TE50 extends Dev {
+public class TE50 extends DevMsg {
     BoxData boxData;
     LineStatus lineStatus;
     TEMeeting meeting;
+    public void toFact(){
+
+    }
 }

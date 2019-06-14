@@ -12,7 +12,10 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SwitchCisco extends Dev {
+public class SwitchCisco extends DevMsg {
     BandwidthCisco bandwidth;
     PhyPortStatusCisco phyPortStatus;
+    public void toFact(){
+
+    }
 }

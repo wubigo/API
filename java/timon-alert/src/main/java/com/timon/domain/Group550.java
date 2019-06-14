@@ -6,24 +6,22 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
+@Slf4j
 @Setter
 @Getter
 @ToString
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Group550 extends Dev {
+public class Group550 extends DevMsg {
+
+    Micro micro;
 
     String system_status_inacall;
 
-    /*
-    if( now  - networkcon > 180000 ){
-                alert: error;
-                alert: .message = "网络不通或已关机，请关注. ";}
-     */
-    private  long nbiot_create_time;
 
     /*
     Camera.name.Input_3.connected == flase
@@ -67,5 +65,25 @@ public class Group550 extends Dev {
     }
      */
     private boolean micro_muted;
+
+
+    int audioRX_packloss;
+    int audioTX_packloss;
+    int audioRX_jitter;
+    public int audioTX_jitter;
+    boolean main_camera_con_status;
+
+    @Override
+    public void toFact(){
+        Meeting m0 = this.getMeeting().get(0);
+        Meeting m1= this.getMeeting().get(1);
+        this.audioRX_packloss = m1.getPercentPacketLoss();
+        this.audioTX_packloss = m0.getPercentPacketLoss();
+        this.audioRX_jitter = m1.getJitter();
+        this.audioTX_jitter= m0.getJitter();
+
+        Camera c0 = this.getCamera().get(0);
+        this.main_camera_con_status = c0.isConnected();
+    }
 
 }

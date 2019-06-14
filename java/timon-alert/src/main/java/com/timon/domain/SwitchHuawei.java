@@ -12,8 +12,11 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SwitchHuawei extends Dev {
+public class SwitchHuawei extends DevMsg {
 
     Bandwidth bandwidth;
     PhyPortStatus phyPortStatus;
+    public void toFact(){
+
+    }
 }

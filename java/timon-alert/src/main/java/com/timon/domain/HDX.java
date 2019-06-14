@@ -12,9 +12,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class HDX extends Dev {
+public class HDX extends DevMsg {
     HDXMeeting meeting;
     int totaltimeipcalls;
     boolean mic_status;
     String muted;
+    public void toFact(){
+
+    }
 }

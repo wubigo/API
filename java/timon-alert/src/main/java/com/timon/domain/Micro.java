@@ -2,6 +2,7 @@ package com.timon.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,8 @@ public class Micro {
         statue = "line_true";
     }
      */
-    boolean POLYCOM_MIC;
-    boolean LINE_IN;
+    @JsonProperty("POLYCOM_MIC")
+    boolean polycom_mic;
+    @JsonProperty("LINE_IN")
+    boolean line_in;
 }

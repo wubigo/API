@@ -18,6 +18,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <easy-rules.version>3.3.0</easy-rules.version>
     </properties>
 
     <dependencies>
@@ -47,6 +48,11 @@
             <artifactId>jedis</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
@@ -60,6 +66,34 @@
             <version>1.18.8</version>
             <scope>provided</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-core</artifactId>
+            <version>${easy-rules.version}</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.jeasy/easy-rules-mvel -->
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-mvel</artifactId>
+            <version>${easy-rules.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-spel</artifactId>
+            <version>${easy-rules.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jeasy/easy-rules-support -->
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-support</artifactId>
+            <version>${easy-rules.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
