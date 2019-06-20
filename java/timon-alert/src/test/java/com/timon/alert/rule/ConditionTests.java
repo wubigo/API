@@ -47,7 +47,12 @@ public class ConditionTests {
             facts.put("alertRecord", ar);
             markAsAdult.execute(facts);
 
-            assertThat(ar.getAlert_level() == 5 );
+            assertThat(ar.getAlert_level() == "5"
+
+
+
+
+            );
         }
 
 

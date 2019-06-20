@@ -14,7 +14,7 @@ spring:
   kafka:
     consumer:
       bootstrap-servers: 172.16.16.5:9092
-      group-id: timon-alertm8ab
+      group-id: timon-alert767
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -30,7 +30,7 @@ spring:
       # alert-raw: timon.device.raw
       alert-raw: redis
       heartbeat: users
-    topics: redis,user
+    topics: redis,user,rawdata
   redis:
     host: 172.16.16.15
     port: 6379

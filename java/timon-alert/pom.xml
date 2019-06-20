@@ -19,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <easy-rules.version>3.3.0</easy-rules.version>
+        <json-path.version>2.4.0</json-path.version>
     </properties>
 
     <dependencies>
@@ -92,6 +93,13 @@
             <groupId>org.jeasy</groupId>
             <artifactId>easy-rules-support</artifactId>
             <version>${easy-rules.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
         </dependency>
 
 

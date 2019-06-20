@@ -22,7 +22,7 @@ public class Group550Main_camera_con_statusRule {
     public void then(Facts facts) throws Exception {
         //my actions
         facts.put("alert msg", "主摄像头处于未连接状态");
-        facts.put("alert level", Level.ERROR);
+        facts.put("alert level", Level.CRITICAL);
 
     }
 }

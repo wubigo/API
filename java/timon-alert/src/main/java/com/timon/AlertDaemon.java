@@ -31,11 +31,8 @@ public class AlertDaemon implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        redisUtil.set("hi","there");
-//        log.info("hi={}", redisUtil.get("hi"));
-//        log.info("hi2={}", redisUtil.get("hi2"));
-       ap.prepareTest();
-
+       ap.loadMetric("FD154430C49FD7-2019-06-19_104152+0800");
+       //ap.shotMetric("FD154430C49FD7");
 
         // to do
         // 1: start redis

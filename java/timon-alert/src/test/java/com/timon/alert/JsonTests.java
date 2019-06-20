@@ -1,7 +1,9 @@
 package com.timon.alert;
 
+import com.timon.common.DataUtil;
 import com.timon.common.HttpUtil;
 import com.timon.domain.Group550;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @JsonTest
+@Slf4j
 public class JsonTests {
 
     @Autowired
@@ -19,6 +22,7 @@ public class JsonTests {
 
     @Test
     public void testDeserialize() throws Exception {
+
         String content = HttpUtil.readUrl("http://172.16.16.1/TiMon/core/raw/dev/avm/src/main/resources/rawData.json");
 
         assertThat(this.json.parseObject(content).getNbiot_type()).isEqualTo("group550");

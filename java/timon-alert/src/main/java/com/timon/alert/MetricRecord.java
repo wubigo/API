@@ -1,12 +1,12 @@
 package com.timon.alert;
 
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Setter
 @Getter
@@ -17,14 +17,13 @@ import java.io.Serializable;
 public class MetricRecord implements Serializable {
     String device_sno;           //设备ID
     String device_type;          //设备类型
-    String metric_name;    //指标名称
-    int  alert_level;            //告警级别
-    int  max;                    //指标上限
-    int  min;
-//
-//    public static MetricRecordBuilder builder(String metric_name){
-//        return new MetricRecordBuilder().metric_name(metric_name);
-//    }
+    String metric_name;          //指标名称
+    String metric_path;          //采集数据指标项
+    String sec_metric_path;
+    String sec_metric_name;
+    String[] range;              //标准取值范围
+    List<MetricCFG> mcl;
+
     @JsonPOJOBuilder(withPrefix = "")
     public static class MetricRecordBuilder {
 

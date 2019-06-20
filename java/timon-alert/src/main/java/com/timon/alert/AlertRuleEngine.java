@@ -1,14 +1,21 @@
 package com.timon.alert;
 
+import com.timon.common.AlertUtil;
+import com.timon.common.DataUtil;
+import com.timon.common.JsonUtil;
 import com.timon.domain.DevMsg;
 import com.timon.rule.G5MicroRule;
 import com.timon.rule.Group550Rule;
 import lombok.extern.slf4j.Slf4j;
+import org.jeasy.rules.api.Condition;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
 import org.jeasy.rules.core.RulesEngineParameters;
+import org.jeasy.rules.mvel.MVELCondition;
+import org.mvel2.CompileException;
+import org.mvel2.PropertyAccessException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -52,11 +59,11 @@ public class AlertRuleEngine {
         rules.unregister(rule);
     }
 
-    public void run(DevMsg dm, MetricRecord mr){
+    public void runDomain(DevMsg dm, MetricRecord mr){
         Facts facts = new Facts();
         //facts.put(mr.metric_name, );
         facts.put("metricRecord", mr);
-        //String ruleClass = RULE_CLASS_PREFIX+ StringUtils.capitalize(dm.getNbiot_type())+mr.metric_name;
+        //String ruleClass = RULE_CLASS_PREFIX+ StringUtils.capitalize(header.getNbiot_type())+mr.metric_name;
         String ruleClass = RULE_CLASS_PREFIX+ StringUtils.capitalize(dm.getNbiot_type())+"Rule";
         log.info("rule class={}", ruleClass);
         try {
@@ -69,11 +76,52 @@ public class AlertRuleEngine {
         } catch (ClassNotFoundException e) {
             log.error("No rule found for device={} metric={}", dm.getNbiot_type(), mr.metric_name );
         }
-
-
     }
 
+    public void run(String json, MetricRecord mr){
+        AlertRecord ar = AlertUtil.convert(json, mr);
+        log.info("metric_name={} fact_value={}", mr.metric_name, ar.factValue);
+        List<MetricCFG> ml = mr.getMcl();
+        boolean isAlert = false;
+        for ( MetricCFG m : ml ) {
+            try {
+                log.info("condition:{}", m.getExpCondition());
+                Condition condition = new MVELCondition(m.getExpCondition());
+                Facts facts = new Facts();
+                facts.put(mr.getMetric_name(), ar.factValue);
+                String secMetricName = mr.sec_metric_name;
+                if ( null != secMetricName ) {
+                    facts.put(secMetricName, ar.sec_fact_value);
+                    facts.put("threshold", m.threshold);
+                    log.info("sec_metric_name={}, sec_fact_V={}", secMetricName, ar.sec_fact_value);
+                }
+                isAlert = condition.evaluate(facts);
+                if ( isAlert ) {
+                    ar.alert_level = m.level;
+                    ar.message = m.desc;
+                    break;
+                }
+            } catch (PropertyAccessException e) {
+                log.error("property not set in facts:{}", e.getMessage());
+                continue;
+            }
 
+            if ( isAlert ){
+                log.info("new alert: sno={} msgId={}({}) factValue={}",
+                        ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
+                        DataUtil.szDate(ar.header.getNbiot_create_time()),
+                        ar.factValue);
+                // save alert history
+            } else {
+                log.info("sno={} msgId={}({}) factValue={} is not alert,ignored",
+                        ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
+                        DataUtil.szDate(ar.header.getNbiot_create_time()),
+                        ar.factValue);
+            }
+
+
+        }
+    }
 
     public void testRun(){
         Facts facts = new Facts();

@@ -46,7 +46,7 @@ public class MsgPreProcessor {
             if ( type.equals( Device.Group550.name() ) ) {
                 Group550 g5 = (Group550)dm;
                 log.info("Group550 msg:{}", g5);
-                //dm.getCamera().stream().forEach( item -> log.debug( item.toString() ));
+                //header.getCamera().stream().forEach( item -> log.debug( item.toString() ));
             } else
                 log.info("no-group550 devmsg={} sno={} type={}", dm.toString(), dm.getNbiot_sno(), type);
             return dm;

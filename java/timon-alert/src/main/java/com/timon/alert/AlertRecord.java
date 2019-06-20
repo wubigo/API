@@ -1,5 +1,6 @@
 package com.timon.alert;
 
+import com.timon.domain.DevMsg;
 import lombok.*;
 
 @Builder
@@ -7,12 +8,15 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class AlertRecord {
-    String device_sno;
-    int  alert_level;
+public class AlertRecord{
+    String  alert_level;
     String metric_name;
+    String sec_metric_name;
     String message;
-    int nbiot_create_time;
+    Object factValue;
+    Object sec_fact_value;
+    AlertHeader header;
+
     public static AlertRecordBuilder builder(String metric_name){
         return new AlertRecordBuilder().metric_name(metric_name);
     }

@@ -423,6 +423,15 @@ public class RedisUtil {
         }
     }
 
+    public <T extends Object > List<Object> lGet2(String key, long start, long end) {
+        try {
+            return redisTemplate.opsForList().range(key, start, end);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * 获取list缓存的长度
      *

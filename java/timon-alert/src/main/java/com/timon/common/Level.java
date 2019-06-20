@@ -1,5 +1,5 @@
 package com.timon.common;
 
 public enum Level {
-    FATAL, ERROR, REMAINDER, INFO
+    CRITICAL, MAJOR, MINOR, WARNING
 }

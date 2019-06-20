@@ -23,11 +23,11 @@ public class Group550Rule {
     public boolean when(@Fact("percentPacketLoss") int percentPacketLoss, @Fact("metricRecord") MetricRecord metricRecord ) {
         //my rule conditions
         mr = metricRecord;
-        if ( percentPacketLoss > mr.getMax()) {
-            ar.setAlert_level( mr.getAlert_level());
-            ar.setMessage("视频传输丢包率>10");
-            return true;
-        }
+//        if ( percentPacketLoss > mr.getMax()) {
+//            ar.setAlert_level( mr.getAlert_level());
+//            ar.setMessage("视频传输丢包率>10");
+//            return true;
+//        }
         return false;
     }
 

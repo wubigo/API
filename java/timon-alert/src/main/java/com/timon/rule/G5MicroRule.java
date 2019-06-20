@@ -13,9 +13,7 @@ import org.jeasy.rules.api.Facts;
 public class G5MicroRule {
 
     MetricRecord mr = MetricRecord.builder()
-            .alert_level(5)
-            .max(50)
-            .build();
+                        .build();
     String status;
     @Condition
     public boolean when(@Fact("polycom_mic") boolean polycom_mic,
@@ -40,7 +38,7 @@ public class G5MicroRule {
     public void then(Facts facts) throws Exception {
         //my actions
         facts.put("alert msg", "mico_input_num");
-        facts.put("alert level", Level.ERROR);
+        facts.put("alert level", Level.CRITICAL);
         facts.put("status", status);
     }
 }
