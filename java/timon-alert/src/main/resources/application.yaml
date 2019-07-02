@@ -1,20 +1,35 @@
-#logging:
-#  level:
-#    org.springframework: ERROR
-#    com.timon: DEBUG
-#  pattern:
-#    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
-#    file: "%d %p %c{1.} [%t] %m%n"
-#  file: app.log
+logging:
+  level:
+    root: INFO
+    org.springframework: ERROR
+    com.timon: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file: target/app.log
+  appenders:
+    maxFileSize: 10MB
+    maxHistory: 3
 
+
+server:
+  port: 8080
 
 spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+  main:
+    # web-application-type: reactive
+    web-application-type: servlet
+    allow-bean-definition-overriding: true
+  ansi:
+    enabled: DETECT
   profiles:
     active: dev
   kafka:
     consumer:
       bootstrap-servers: 172.16.16.5:9092
-      group-id: timon-alert767
+      group-id: timon-alert3333q
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -28,9 +43,9 @@ spring:
       compression-type: snappy
     topic:
       # alert-raw: timon.device.raw
-      alert-raw: redis
+      alert-raw: rawdata
       heartbeat: users
-    topics: redis,user,rawdata
+    topics: testrawdata,users
   redis:
     host: 172.16.16.15
     port: 6379
@@ -69,4 +84,14 @@ rule:
   class:
     prefix: com.timon.rule.
 
+#server:
+#  servlet:
+#    contextPath: /timon
 
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"

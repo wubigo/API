@@ -9,6 +9,7 @@ import com.timon.common.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.text.MessageFormat;
 import java.util.Date;
 
 @Slf4j
@@ -30,7 +31,7 @@ public class JsonTests {
 
     @Test
     public void testp1(){
-
+        log.info(MessageFormat.format("视频接收出现抖动{0}毫秒{1}", 35));
         log.info("date:{}", DataUtil.szDate(new Date().getTime()));
         log.info("date:{}", DataUtil.szDate(1511658000));
 

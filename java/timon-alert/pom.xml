@@ -11,7 +11,7 @@
     <groupId>com.timon</groupId>
     <artifactId>timon-alert</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>timon-alert</name>
     <description>timon-alert project for Spring Boot</description>
 
@@ -30,9 +30,17 @@
 
         </dependency>
         -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -102,6 +110,19 @@
             <version>${json-path.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -114,6 +135,25 @@
 
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- standalone tomcat deploy
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        -->
+
     </dependencies>
 
     <build>
@@ -130,7 +170,7 @@
                             <configuration>
                                 <classifier>spring-boot</classifier>
                                 <mainClass>
-                                    com.timon.AlertDaemon
+                                    com.timon.AlertWebApplication
                                 </mainClass>
                             </configuration>
                         </execution>
@@ -138,8 +178,81 @@
 
             </plugin>
 
+            <plugin>
+                <groupId>se.bjurr.gitchangelog</groupId>
+                <artifactId>git-changelog-maven-plugin</artifactId>
+                <version>1.60</version>
+                <executions>
+                    <execution>
+                        <id>GenerateGitChangelog</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>git-changelog</goal>
+                        </goals>
+                        <configuration>
+                            <!-- A file on filesystem //-->
+                            <file>CHANGELOG.md</file>
+                            <toRef>HEAD</toRef>
+                            <templateContent>
+                                <![CDATA[
+                                    # Changelog
+                                    Changelog of My Project.
+
+                                    {{#tags}}
+                                    ## {{name}}
+                                     {{#issues}}
+                                      {{#hasIssue}}
+                                       {{#hasLink}}
+                                    ### {{name}} [{{issue}}]({{link}}) {{title}} {{#hasIssueType}} *{{issueType}}* {{/hasIssueType}} {{#hasLabels}} {{#labels}} *{{.}}* {{/labels}} {{/hasLabels}}
+                                       {{/hasLink}}
+                                       {{^hasLink}}
+                                    ### {{name}} {{issue}} {{title}} {{#hasIssueType}} *{{issueType}}* {{/hasIssueType}} {{#hasLabels}} {{#labels}} *{{.}}* {{/labels}} {{/hasLabels}}
+                                       {{/hasLink}}
+                                      {{/hasIssue}}
+                                      {{^hasIssue}}
+                                    ### {{name}}
+                                      {{/hasIssue}}
+
+                                      {{#commits}}
+                                    **{{{messageTitle}}}**
+
+                                    {{#messageBodyItems}}
+                                     * {{.}}
+                                    {{/messageBodyItems}}
+
+                                    [{{hash}}](https://github.com/{{ownerName}}/{{repoName}}/commit/{{hash}}) {{authorName}} *{{commitTime}}*
+
+                                      {{/commits}}
+
+                                     {{/issues}}
+                                    {{/tags}}
+                                             ]]>
+                            </templateContent>
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>embed-tomcat</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>compile</scope>
+                </dependency>
+            </dependencies>
+
+
+        </profile>
+    </profiles>
 
 
 

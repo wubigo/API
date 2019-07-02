@@ -1,9 +1,12 @@
 package com.timon.common;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
 import com.timon.alert.AlertHeader;
 import com.timon.alert.MetricRecord;
 import com.timon.domain.DevMsg;
@@ -20,13 +23,26 @@ import java.util.List;
 @Slf4j
 public class JsonUtil {
 
+    public static String toJson(Object o){
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.writeValueAsString(o);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public  static Object read(String json, String jpath){
         DocumentContext dc  = getContext(json);
         return  read(dc, jpath);
     }
 
     public static DocumentContext getContext(String json){
-        DocumentContext dc  = JsonPath.parse(json);
+        Configuration config = Configuration.defaultConfiguration()
+                .addOptions(Option.DEFAULT_PATH_LEAF_TO_NULL)
+                .addOptions(Option.SUPPRESS_EXCEPTIONS);
+        DocumentContext dc  = JsonPath.using(config).parse(json);
         return dc;
     }
 

@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 @Slf4j
@@ -78,49 +79,51 @@ public class AlertRuleEngine {
         }
     }
 
-    public void run(String json, MetricRecord mr){
+    public AlertRecord run(String json, MetricRecord mr){
         AlertRecord ar = AlertUtil.convert(json, mr);
         log.info("metric_name={} fact_value={}", mr.metric_name, ar.factValue);
         List<MetricCFG> ml = mr.getMcl();
         boolean isAlert = false;
         for ( MetricCFG m : ml ) {
             try {
-                log.info("condition:{}", m.getExpCondition());
+                log.info("condition:{} [{}={}] threshold={}", m.getExpCondition(), mr.metric_path, ar.factValue, m.threshold);
                 Condition condition = new MVELCondition(m.getExpCondition());
                 Facts facts = new Facts();
                 facts.put(mr.getMetric_name(), ar.factValue);
+                facts.put("threshold", m.threshold);
                 String secMetricName = mr.sec_metric_name;
                 if ( null != secMetricName ) {
                     facts.put(secMetricName, ar.sec_fact_value);
-                    facts.put("threshold", m.threshold);
-                    log.info("sec_metric_name={}, sec_fact_V={}", secMetricName, ar.sec_fact_value);
+                    log.info("sec_metric_name={}, sec_fact_value={}", secMetricName, ar.sec_fact_value);
                 }
+                log.info("fire rule...");
                 isAlert = condition.evaluate(facts);
                 if ( isAlert ) {
                     ar.alert_level = m.level;
-                    ar.message = m.desc;
+                    ar.message = MessageFormat.format(m.desc, m.threshold);
                     break;
                 }
             } catch (PropertyAccessException e) {
                 log.error("property not set in facts:{}", e.getMessage());
                 continue;
             }
-
-            if ( isAlert ){
-                log.info("new alert: sno={} msgId={}({}) factValue={}",
-                        ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
-                        DataUtil.szDate(ar.header.getNbiot_create_time()),
-                        ar.factValue);
-                // save alert history
-            } else {
-                log.info("sno={} msgId={}({}) factValue={} is not alert,ignored",
-                        ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
-                        DataUtil.szDate(ar.header.getNbiot_create_time()),
-                        ar.factValue);
-            }
-
-
         }
+
+
+        if ( isAlert ){
+            log.info("new alert: sno={} msgId={}({}) {}={} level={}",
+                    ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
+                    DataUtil.szDate(ar.header.getNbiot_create_time()), mr.metric_path,
+                    ar.factValue, ar.alert_level);
+            // save alert history
+            return ar;
+        } else {
+            log.info("sno={} msgId={}({}) {}({})={} is not an alert, discarded",
+                    ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
+                    DataUtil.szDate(ar.header.getNbiot_create_time()), mr.metric_path,
+                    mr.metric_name, ar.factValue);
+        }
+        return  null;
     }
 
     public void testRun(){

@@ -11,8 +11,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
-@SpringBootApplication
-public class AlertDaemon implements CommandLineRunner {
+//@SpringBootApplication
+//public class AlertDaemon implements CommandLineRunner {
+public class AlertDaemon{
 
     @Autowired
     MsgPreProcessor mp;
@@ -22,13 +23,13 @@ public class AlertDaemon implements CommandLineRunner {
     AlertProcessor ap;
 
 
-    public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(AlertDaemon.class);
-        app.setBannerMode(Banner.Mode.OFF);
-        app.run(args);
-    }
+//    public static void main(String[] args) {
+//        SpringApplication app = new SpringApplication(AlertDaemon.class);
+//        app.setBannerMode(Banner.Mode.OFF);
+//        app.run(args);
+//    }
 
-    @Override
+    //@Override
     public void run(String... args) throws Exception {
 
        ap.loadMetric("FD154430C49FD7-2019-06-19_104152+0800");

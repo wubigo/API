@@ -27,7 +27,7 @@ public class AlertProcessor {
     @Autowired
     AlertRuleEngine engine;
 
-    AlertRecord evaluate(String json){
+    List<AlertRecord> evaluate(String json){
         String type = (String) JsonUtil.read(json,"nbiot_type");
         if ( null == type ){
             log.error("nbiot_type not set in raw msg");
@@ -36,16 +36,20 @@ public class AlertProcessor {
 
         type = StringUtils.capitalize(type);
 
-        if ( !Device.Group550.equals(type) ){
+        if ( !Device.Group550.name().equals(type) ){
             log.info("type={} not supported yet, skip", type);
             return null;
         }
         List<MetricRecord> ml = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+type, 0, -1);
         if ( null == ml || ml.size() ==0 )
             return null;
-        for ( MetricRecord mr : ml )
-             engine.run(json, mr);
-        return null;
+        List<AlertRecord> arl = new ArrayList<AlertRecord>();
+        for ( MetricRecord mr : ml ) {
+            AlertRecord ar = engine.run(json, mr);
+            if ( null != ar )
+                arl.add(ar);
+        }
+        return arl;
     }
 
     AlertRecord evaluateDomain(DevMsg dm){
@@ -118,13 +122,15 @@ public class AlertProcessor {
 
         List<MetricRecord> mrl = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+sno, 0, -1);
         if ( null != mrl && mrl.size() > 0 ) {
-            log.info("metric record for sno={} exist, skip loading", sno);
+            log.info("metric record for sno={} exist and config={} skip loading", sno, mrl);
             return;
         }
         List<MetricRecord> mml = JsonUtil.readList(file);
         log.info("mml={}", mml);
         for ( MetricRecord mr : mml )
             redisUtil.lSet(METRIC_PREFIX+sno, mr);
+
+        mml = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+sno, 0, -1);
         for ( MetricRecord m : mrl ){
             log.info("metric cached record:{}", m.toString());
         }
