@@ -1,6 +1,7 @@
 package com.timon.web;
 
 import com.timon.alert.AlertRecord;
+import com.timon.alert.model.Alert;
 import com.timon.common.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.codec.ServerSentEvent;
@@ -22,13 +23,10 @@ public class AlertPusher {
         return f;
     }
 
-    public  void broadcast(List<AlertRecord> arl){
-        String data = JsonUtil.toJson(arl);
-        if ( null == data )
-            data = "";
-        log.info("broadcast alert={}", data);
+    public  void broadcast(String jsonAlert){
+
         try {
-            emitter.onNext(ServerSentEvent.builder(data).event("alert").id(UUID.randomUUID().toString()).build());
+            emitter.onNext(ServerSentEvent.builder(jsonAlert).event("alert").id(UUID.randomUUID().toString()).build());
         } catch (Exception e) {
             log.error(e.getMessage());
             emitter.onError(e);

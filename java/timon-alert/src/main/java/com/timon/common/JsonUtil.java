@@ -9,6 +9,7 @@ import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.timon.alert.AlertHeader;
 import com.timon.alert.MetricRecord;
+import com.timon.alert.model.Alert;
 import com.timon.domain.DevMsg;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +23,7 @@ import java.util.List;
 
 @Slf4j
 public class JsonUtil {
+
 
     public static String toJson(Object o){
         ObjectMapper objectMapper = new ObjectMapper();

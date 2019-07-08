@@ -1,5 +1,6 @@
 package com.timon.alert;
 
+import com.timon.alert.model.Alert;
 import com.timon.common.Device;
 import com.timon.common.JsonUtil;
 import com.timon.common.Level;
@@ -27,7 +28,7 @@ public class AlertProcessor {
     @Autowired
     AlertRuleEngine engine;
 
-    List<AlertRecord> evaluate(String json){
+    List<Alert> evaluate(String json){
         String type = (String) JsonUtil.read(json,"nbiot_type");
         if ( null == type ){
             log.error("nbiot_type not set in raw msg");
@@ -43,13 +44,19 @@ public class AlertProcessor {
         List<MetricRecord> ml = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+type, 0, -1);
         if ( null == ml || ml.size() ==0 )
             return null;
-        List<AlertRecord> arl = new ArrayList<AlertRecord>();
+        List<Alert> al = new ArrayList<Alert>();
         for ( MetricRecord mr : ml ) {
             AlertRecord ar = engine.run(json, mr);
-            if ( null != ar )
-                arl.add(ar);
+            if ( null != ar ) {
+                Alert alert = Alert.builder(ar.header.getNbiot_sno(), ar.metric_name)
+                        .level(ar.alert_level)
+                        .detail(ar.message)
+                        .time(ar.header.getNbiot_create_time())
+                        .build();
+                al.add(alert);
+            }
         }
-        return arl;
+        return al;
     }
 
     AlertRecord evaluateDomain(DevMsg dm){
