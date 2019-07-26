@@ -1,0 +1,20 @@
+spring:
+  main:
+    web-application-type: reactive
+  kafka:
+      consumer:
+        bootstrap-servers: 172.16.16.5:9092
+        group-id: timon-raw78i
+        auto-offset-reset: earliest
+        request-timeout-ms: 6000
+        heartbeat-interval-ms: 2000
+        enable-auto-commit: true
+        auto-commit-interval-ms: 1000
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      topics: timon-alert,users
+
+server:
+  port: 8080
+  http2:
+    enabled: true

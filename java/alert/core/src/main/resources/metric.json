@@ -1,0 +1,95 @@
+[
+    {
+        "device_sno": "FD154430C49FD7",
+        "device_type": "Group550",
+        "metric_name": "meetstatus",
+        "metric_path": "system_status_inacall",
+        "sec_metric_path": null,
+        "sec_metric_name": null,
+        "range": null,
+        "mcl": [
+            {
+                "threshold": "off",
+                "level": "warning",
+                "expCondition": "meetstatus == threshold",
+                "desc": "与会状态关闭"
+            }
+        ]
+    },
+    {
+        "device_sno": "FD154430C49FD7",
+        "device_type": "Group550",
+        "metric_name": "audioRX_packloss",
+        "metric_path": "meeting[1].percentPacketLoss",
+        "sec_metric_path": "system_status_inacall",
+        "sec_metric_name": "meetstatus",
+        "range": null,
+        "mcl": [
+            {
+                "threshold": "1",
+                "level": "critical",
+                "expCondition": "audioRX_packloss > threshold && meetstatus == \"up\"",
+                "desc": "请检测本地摄像头视频发送码率为{0}Kb"
+            }
+        ]
+    },
+    {
+        "device_sno": "FD154430C49FD7",
+        "device_type": "Group550",
+        "metric_name": "videotxbit",
+        "metric_path": "meeting[2].actualBitRate",
+        "sec_metric_path": "system_status_inacall",
+        "sec_metric_name": "meetstatus",
+        "range": null,
+        "mcl": [
+            {
+                "threshold": "150",
+                "level": "critical",
+                "expCondition": "videotxbit> threshold && meetstatus == \"up\"",
+                "desc": "请检测本地摄像头视频发送码率为{0}Kb"
+            },
+            {
+                "threshold": "200",
+                "level": "major",
+                "expCondition": "videotxbit > threshold && meetstatus == \"up\"",
+                "desc": "请检测本地摄像头视频发送码率为{0}Kb"
+            }
+        ]
+    },
+    {
+        "device_sno": "FD154430C49FD7",
+        "device_type": "Group550",
+        "metric_name": "videoRX_jitter",
+        "metric_path": "meeting[3].jitter",
+        "sec_metric_path": "system_status_inacall",
+        "sec_metric_name": "meetstatus",
+        "range": null,
+        "mcl": [
+            {
+                "threshold": "80",
+                "level": "critical",
+                "expCondition": "videoRX_jitter > threshold && meetstatus == \"up\"",
+                "desc": "视频接收出现抖动{0}毫秒"
+            },
+            {
+                "threshold": "70",
+                "level": "major",
+                "expCondition": "videoRX_jitter > threshold && meetstatus == \"up\"",
+                "desc": "视频接收出现抖动{0}毫秒"
+            },
+            {
+                "threshold": "60",
+                "level": "minor",
+                "expCondition": "videoRX_jitter > threshold && meetstatus == \"up\"",
+                "desc": "视频接收出现抖动{0}毫秒"
+            },
+            {
+                "threshold": "50",
+                "level": "warning",
+                "expCondition": "videoRX_jitter > threshold && meetstatus == \"up\"",
+                "desc": "视频接收出现抖动{0}毫秒"
+            }
+
+        ]
+    }
+]
