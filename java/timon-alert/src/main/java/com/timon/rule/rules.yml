@@ -1,8 +1,0 @@
----
-name: 主摄像头连接状态
-description: 主摄像头连接状态
-priority: 1
-condition: "group550.main_camera_con_status"
-actions:
-  - "group550.setAlert(true);"
----
