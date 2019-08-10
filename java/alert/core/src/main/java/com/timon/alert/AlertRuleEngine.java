@@ -79,61 +79,60 @@ public class AlertRuleEngine {
         }
     }
 
+    /**
+     * 告警规则运行引擎
+     * @param json： 原始设备消息
+     * @param mr： 指标配置
+     * @return
+     */
     public AlertRecord run(String json, MetricRecord mr){
         AlertRecord ar = AlertUtil.convert(json, mr);
-        log.info("metric_name={} fact_value={}", mr.metric_name, ar.factValue);
+        log.debug("metric_name={} fact_value={}", mr.metric_name, ar.factValue);
         List<MetricCFG> ml = mr.getMcl();
         boolean isAlert = false;
+        //单个指标的多个级别告警配置
         for ( MetricCFG m : ml ) {
             try {
-                log.info("condition:{} [{}={}] threshold={}", m.getExpCondition(), mr.metric_path, ar.factValue, m.threshold);
+                log.debug("condition:{} [{}={}] threshold={}", m.getExpCondition(), mr.metric_path, ar.factValue, m.threshold);
                 Condition condition = new MVELCondition(m.getExpCondition());
                 Facts facts = new Facts();
                 facts.put(mr.getMetric_name(), ar.factValue);
                 facts.put("threshold", m.threshold);
+
                 String secMetricName = mr.sec_metric_name;
                 if ( null != secMetricName ) {
                     facts.put(secMetricName, ar.sec_fact_value);
                     log.info("sec_metric_name={}, sec_fact_value={}", secMetricName, ar.sec_fact_value);
                 }
-                log.info("fire rule...");
+                log.debug("fire rule...");
                 isAlert = condition.evaluate(facts);
+
                 if ( isAlert ) {
                     ar.alert_level = m.level;
-                    ar.message = MessageFormat.format(m.desc, m.threshold);
+                    if ( m.desc != null)
+                        ar.message = MessageFormat.format(m.desc, ar.factValue);
                     break;
                 }
             } catch (PropertyAccessException e) {
                 log.error("property not set in facts:{}", e.getMessage());
                 continue;
+            } catch (ClassCastException cce) {
+                log.error("ClassCastException:{}", cce.getMessage());
+                continue;
             }
         }
 
-
         if ( isAlert ){
-            log.info("new alert: sno={} msgId={}({}) {}={} level={}",
+            log.info("new alert: sno={} msgId={} {}={} level={}",
                     ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
-                    DataUtil.szDate(ar.header.getNbiot_create_time()), mr.metric_path,
-                    ar.factValue, ar.alert_level);
-            // save alert history
+                    mr.metric_path, ar.factValue, ar.alert_level);
             return ar;
         } else {
-            log.info("sno={} msgId={}({}) {}({})={} is not an alert, discarded",
+            log.debug("sno={} msgId={} {}({})={} is not an alert, discarded",
                     ar.header.getNbiot_sno(), ar.header.getNbiot_create_time(),
-                    DataUtil.szDate(ar.header.getNbiot_create_time()), mr.metric_path,
-                    mr.metric_name, ar.factValue);
+                    mr.metric_path, mr.metric_name, ar.factValue);
         }
         return  null;
-    }
-
-    public void testRun(){
-        Facts facts = new Facts();
-        facts.put("percentPacketLoss", 40);
-        fire(facts, new Group550Rule());
-        facts = new Facts();
-        facts.put("polycom_mic", false);
-        facts.put("line_in", true);
-        fire(facts, new G5MicroRule());
     }
 
 }

@@ -19,7 +19,7 @@ public class WebSecurityConfigurer extends
     }
 
     @Override
-    @Bean
+    @Bean(name="uds")
     public UserDetailsService userDetailsServiceBean() throws Exception {
         return super.userDetailsServiceBean();
     }
@@ -30,11 +30,11 @@ public class WebSecurityConfigurer extends
             throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("john")
-                .password("pass")
+                .password("{noop}pass")
                 .roles("USER")
                 .and()
                 .withUser("will")
-                .password("pass")
+                .password("{noop}pass")
                 .roles("USER", "ADMIN");
     }
 }

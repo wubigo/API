@@ -9,3 +9,6 @@ following  annotation
 @EnableAuthorizationServer
 
 ```
+
+
+http://localhost:8080/oauth/token

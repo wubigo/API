@@ -32,19 +32,21 @@ public class UpstreamConsumerListener {
     @Autowired
     AlertService as;
 
+    /**
+     * kafka消息监听器
+     * @param cr ： 消息记录
+     */
     @KafkaListener(topics = "#{'${spring.kafka.topics}'.split(',')}",
             clientIdPrefix = "TiMon",
             groupId = "${spring.kafka.consumer.group-id}")
     public void listen(ConsumerRecord<String, String> cr) {
         String payload = cr.value();
-        cr.offset();
         log.trace("offset={}  partition={} topic={} payload={}", cr.offset(), cr.partition(), cr.topic(), payload);
         List<Alert> al = ap.evaluate(payload);
         if ( null != al && al.size() > 0  ) {
             String jsonAlert = JsonUtil.toJson(al);
             if ( null != jsonAlert ) {
                 log.info("broadcast alert={}", jsonAlert);
-
                 as.batchInsert(al);
                 dumpAlert(jsonAlert);
             }

@@ -37,7 +37,7 @@ public class SenderConsole implements CommandLineRunner {
     @Autowired
     private KafkaProperties kafkaProperties;
 
-    @Value("${spring.kafka.topic.alert-raw}")
+    @Value("${spring.kafka.producer.topic}")
     private String topicName;
 
     private CountDownLatch latch;
@@ -54,7 +54,7 @@ public class SenderConsole implements CommandLineRunner {
 
         String s = readUrl("http://172.16.16.1/TiMon/core/raw/dev/avm/src/main/resources/rawData.json");
         latch = new CountDownLatch(10);
-        send(s);
+        //send(s);
 
     }
 

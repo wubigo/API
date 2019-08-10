@@ -13,7 +13,7 @@ public class Alert {
 
     private String sno;
     private String name;
-    private int location;
+    private String location;
     private String level;
     private long time;
     private String detail;

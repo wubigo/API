@@ -19,7 +19,8 @@ public abstract  class DevMsg {
    String nbiot_kind;
    String nbiot_type;
    long nbiot_create_time;
-   List<Location> location;
+   List<Location> locations;
+   List<Kind>  kinds;
    public void toFact(){
 
    }

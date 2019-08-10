@@ -1,0 +1,2418 @@
+{
+    "errors": [],
+    "data": {
+        "device": {
+            "id": "10000",
+            "sno": "SNO11",
+            "order_time": 1563265872168,
+            "quality": 30,
+            "discard_time": 1563265872168,
+            "asset_status": "0",
+            "alert_status": "critical",
+            "i18n": {
+                "cn_name": "毛",
+                "en_name": "meeting2 group 550 "
+            },
+            "cn_name": "毛",
+            "en_name": "meeting2 group 550 ",
+            "price": 1.0,
+            "gateway": {
+                "id": "b57d4484425940d685f297cef02dbbbb",
+                "i18n": {
+                    "cn_name": "天津"
+                },
+                "cn_name": "天津",
+                "env": {
+                    "ip": "1235",
+                    "cycle": 0,
+                    "unit": "ms",
+                    "username": "",
+                    "password": ""
+                },
+                "sno": "abcdef",
+                "git_path": "",
+                "desription": ""
+            },
+            "env": {
+                "ip": "1.1.1.1",
+                "cycle": 30000,
+                "unit": "ms",
+                "username": "admin",
+                "password": "123456"
+            },
+            "tags": [
+                {
+                    "id": "100",
+                    "i18n": {
+                        "cn_name": "22",
+                        "en_name": "22"
+                    },
+                    "cn_name": "22",
+                    "en_name": "22"
+                },
+                {
+                    "id": "101",
+                    "i18n": {
+                        "cn_name": "33",
+                        "en_name": "33"
+                    },
+                    "cn_name": "33",
+                    "en_name": "33"
+                },
+                {
+                    "id": "102",
+                    "i18n": {
+                        "cn_name": "11",
+                        "en_name": "43432"
+                    },
+                    "cn_name": "11",
+                    "en_name": "43432"
+                }
+            ],
+            "kinds": [
+                {
+                    "id": "35663ded3530477d8424caed2c798d9b",
+                    "i18n": {
+                        "cn_name": "视频",
+                        "en_name": "video"
+                    },
+                    "cn_name": "视频",
+                    "en_name": "video",
+                    "level": "1",
+                    "order_num": 0
+                },
+                {
+                    "id": "4facad6b47fa4cea9fe64a8016069c1d",
+                    "i18n": {
+                        "cn_name": "视频会议终端",
+                        "en_name": "meeting"
+                    },
+                    "cn_name": "视频会议终端",
+                    "en_name": "meeting",
+                    "level": "2",
+                    "order_num": 0
+                },
+                {
+                    "id": "b5c920ded6db49b19311ce706e24f268",
+                    "i18n": {
+                        "cn_name": "宝丽通",
+                        "en_name": "ploycom"
+                    },
+                    "cn_name": "宝丽通",
+                    "en_name": "ploycom",
+                    "level": "3",
+                    "order_num": 0
+                },
+                {
+                    "id": "716800b49cdd4041b81d9b722094abe8",
+                    "i18n": {
+                        "cn_name": "group550",
+                        "en_name": "group550"
+                    },
+                    "cn_name": "group550",
+                    "en_name": "group550",
+                    "level": "4",
+                    "order_num": 0
+                }
+            ],
+            "locations": [
+                {
+                    "id": "1c519cedda624a4282e4a94a64c06fe6",
+                    "i18n": {
+                        "cn_name": "天津",
+                        "en_name": "33"
+                    },
+                    "cn_name": "天津",
+                    "en_name": "33",
+                    "level": "1",
+                    "order_num": 0
+                },
+                {
+                    "id": "88b83333ea6d4ec9b038584ba8dfa270",
+                    "i18n": {
+                        "cn_name": "方言公司",
+                        "en_name": "43432"
+                    },
+                    "cn_name": "方言公司",
+                    "en_name": "43432",
+                    "level": "2",
+                    "order_num": 0
+                },
+                {
+                    "id": "7d81a1a70bdd4d669b644106b1c5d14f",
+                    "i18n": {
+                        "cn_name": "会议室二",
+                        "en_name": "43432"
+                    },
+                    "cn_name": "会议室二",
+                    "en_name": "43432",
+                    "level": "3",
+                    "order_num": 0
+                }
+            ],
+            "dept": {
+                "id": "101",
+                "dept_name": "国网总公司",
+                "order_num": 1,
+                "leader": "",
+                "phone": "",
+                "email": ""
+            },
+            "driver": {
+                "id": "ab2dc663eb004de59d44ad0630dd2515",
+                "i18n": {
+                    "cn_name": "group550",
+                    "en_name": "group550(1).py"
+                },
+                "cn_name": "group550",
+                "en_name": "group550(1).py",
+                "path": "/Users/mocheng/git/tico/upload/driver/201907/oq02v0rftkjvfom8i3rpugggjl.py",
+                "normals": [
+                    {
+                        "id": "006bd9a3699e4abd832bd4dd08d0a786",
+                        "i18n": {
+                            "cn_name": "视频接收延迟",
+                            "en_name": "videoRX_latency"
+                        },
+                        "cn_name": "视频接收延迟",
+                        "en_name": "videoRX_latency",
+                        "operate_key": "meeting[3].latency",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "009b9b9d9f934a339fe07f4611861a39",
+                                "i18n": {
+                                    "cn_name": "222"
+                                },
+                                "cn_name": "222",
+                                "grade": "critical",
+                                "order_num": 1,
+                                "rulers": []
+                            },
+                            {
+                                "id": "230e65909f87426fb1bcd83a06294961",
+                                "i18n": {
+                                    "cn_name": "111"
+                                },
+                                "cn_name": "111",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": []
+                            },
+                            {
+                                "id": "25a806043ec4409a845a5610bee4fbdc",
+                                "i18n": {
+                                    "cn_name": "哈哈"
+                                },
+                                "cn_name": "哈哈",
+                                "grade": "major",
+                                "order_num": 3,
+                                "rulers": []
+                            },
+                            {
+                                "id": "594da6712eeb4b0e8ae31f7d92e5fe45",
+                                "i18n": {
+                                    "cn_name": "333"
+                                },
+                                "cn_name": "333",
+                                "grade": "critical",
+                                "order_num": 2,
+                                "rulers": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "0269da55add54eb9a291990b48cab6b7",
+                        "i18n": {
+                            "cn_name": "音频接收质量",
+                            "en_name": "audiorx_meetingquality"
+                        },
+                        "cn_name": "音频接收质量",
+                        "en_name": "audiorx_meetingquality",
+                        "operate_key": "meeting[1].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "692ac8743bb54f85afd9ba059f236bc5",
+                                "i18n": {
+                                    "cn_name": ""
+                                },
+                                "cn_name": "",
+                                "grade": "critical",
+                                "order_num": 936447649,
+                                "rulers": []
+                            },
+                            {
+                                "id": "83aca17147a7491c95198c5c1b70cb8f",
+                                "i18n": {
+                                    "cn_name": "1111"
+                                },
+                                "cn_name": "1111",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "8ae7e3f8af3d4f03815771112a082576",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "04de1e02003041878b79d86e8e05e5c7",
+                                        "normal": {
+                                            "id": "04de1e02003041878b79d86e8e05e5c7",
+                                            "i18n": {
+                                                "cn_name": "音频接收丢包数",
+                                                "en_name": "audiorx_packetloss"
+                                            },
+                                            "cn_name": "音频接收丢包数",
+                                            "en_name": "audiorx_packetloss",
+                                            "operate_key": "meeting[1].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": "=",
+                                        "val": "1111"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "04de1e02003041878b79d86e8e05e5c7",
+                        "i18n": {
+                            "cn_name": "音频接收丢包数",
+                            "en_name": "audiorx_packetloss"
+                        },
+                        "cn_name": "音频接收丢包数",
+                        "en_name": "audiorx_packetloss",
+                        "operate_key": "meeting[1].packetLoss",
+                        "unit": "个",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "2d9552b6b8b64c71a2a7647f8c691612",
+                                "i18n": {
+                                    "cn_name": "音频接收丢包数较高为{0}个"
+                                },
+                                "cn_name": "音频接收丢包数较高为{0}个",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "95e5e337e4b141b2a5e441bb74a1015b",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "04de1e02003041878b79d86e8e05e5c7",
+                                        "normal": {
+                                            "id": "04de1e02003041878b79d86e8e05e5c7",
+                                            "i18n": {
+                                                "cn_name": "音频接收丢包数",
+                                                "en_name": "audiorx_packetloss"
+                                            },
+                                            "cn_name": "音频接收丢包数",
+                                            "en_name": "audiorx_packetloss",
+                                            "operate_key": "meeting[1].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "3000"
+                                    },
+                                    {
+                                        "id": "fe93146bbf1b4c81b66fdcf66ba01264",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "4ae214d4c4a54327b19f2ffc996ac868",
+                                "i18n": {
+                                    "cn_name": ""
+                                },
+                                "cn_name": "",
+                                "grade": "major",
+                                "order_num": 930873557,
+                                "rulers": []
+                            },
+                            {
+                                "id": "8ce97cb81ca64d9f82cf7d6f13969e4a",
+                                "i18n": {
+                                    "cn_name": "音频接收丢包数较高为{0}个"
+                                },
+                                "cn_name": "音频接收丢包数较高为{0}个",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "8d70945b19c840de958c1c01b7facf60",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "af515af302f948be8d6f9f1032524165",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "04de1e02003041878b79d86e8e05e5c7",
+                                        "normal": {
+                                            "id": "04de1e02003041878b79d86e8e05e5c7",
+                                            "i18n": {
+                                                "cn_name": "音频接收丢包数",
+                                                "en_name": "audiorx_packetloss"
+                                            },
+                                            "cn_name": "音频接收丢包数",
+                                            "en_name": "audiorx_packetloss",
+                                            "operate_key": "meeting[1].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "1000"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "9e6f98cad2af4690b40950122583119b",
+                                "i18n": {
+                                    "cn_name": ""
+                                },
+                                "cn_name": "",
+                                "grade": "critical",
+                                "order_num": 930274877,
+                                "rulers": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "0aa2ded970ba4b649f8a211aaedd9259",
+                        "i18n": {
+                            "cn_name": "音频传输丢包率",
+                            "en_name": "audiotx_percentpacketloss"
+                        },
+                        "cn_name": "音频传输丢包率",
+                        "en_name": "audiotx_percentpacketloss",
+                        "operate_key": "meeting[0].percentPacketLoss",
+                        "unit": "%",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "e6e3b21b5d1946f6a6988353e576e0c1",
+                                "i18n": {
+                                    "cn_name": "音频发送丢包数较高为{0}个"
+                                },
+                                "cn_name": "音频发送丢包数较高为{0}个",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "598d91f25bc74bab87caa9683773819d",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "0aa2ded970ba4b649f8a211aaedd9259",
+                                        "normal": {
+                                            "id": "0aa2ded970ba4b649f8a211aaedd9259",
+                                            "i18n": {
+                                                "cn_name": "音频传输丢包率",
+                                                "en_name": "audiotx_percentpacketloss"
+                                            },
+                                            "cn_name": "音频传输丢包率",
+                                            "en_name": "audiotx_percentpacketloss",
+                                            "operate_key": "meeting[0].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "3000"
+                                    },
+                                    {
+                                        "id": "c7a983b106cc4ad790c266f2cd506b97",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f2b0039e41124a5dad4939e357e7679a",
+                                "i18n": {
+                                    "cn_name": "音频发送丢包数较高为{0}个"
+                                },
+                                "cn_name": "音频发送丢包数较高为{0}个",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "934890b03d09482baa3c1dd0403d8055",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "0aa2ded970ba4b649f8a211aaedd9259",
+                                        "normal": {
+                                            "id": "0aa2ded970ba4b649f8a211aaedd9259",
+                                            "i18n": {
+                                                "cn_name": "音频传输丢包率",
+                                                "en_name": "audiotx_percentpacketloss"
+                                            },
+                                            "cn_name": "音频传输丢包率",
+                                            "en_name": "audiotx_percentpacketloss",
+                                            "operate_key": "meeting[0].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "id": "d8550a4ed81940efb3cc5f7c40f47016",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "0c58194540384a73a19d82480b6362f1",
+                        "i18n": {
+                            "cn_name": "全向麦音频输入状态",
+                            "en_name": "omnimic_inputstatus"
+                        },
+                        "cn_name": "全向麦音频输入状态",
+                        "en_name": "omnimic_inputstatus",
+                        "operate_key": "micro.POLYCOM_MIC",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "136f5982a53f4d19b9f672fbaaae9ce5",
+                        "i18n": {
+                            "cn_name": "数据采集时间",
+                            "en_name": "data_create_time"
+                        },
+                        "cn_name": "数据采集时间",
+                        "en_name": "data_create_time",
+                        "operate_key": "nbiot_create_time",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "eca145f847384add924a806972803deb",
+                                "i18n": {
+                                    "cn_name": "网络不通或已关机，请关注"
+                                },
+                                "cn_name": "网络不通或已关机，请关注",
+                                "grade": "minor",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "bf81b2fe26be4d009969b1b17913c47e",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "136f5982a53f4d19b9f672fbaaae9ce5",
+                                        "normal": {
+                                            "id": "136f5982a53f4d19b9f672fbaaae9ce5",
+                                            "i18n": {
+                                                "cn_name": "数据采集时间",
+                                                "en_name": "data_create_time"
+                                            },
+                                            "cn_name": "数据采集时间",
+                                            "en_name": "data_create_time",
+                                            "operate_key": "nbiot_create_time",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "180000"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "14771c6e3d5044f38a7cd274ccc2a4c3",
+                        "i18n": {
+                            "cn_name": "视频发送丢包数",
+                            "en_name": "videotx_packetloss"
+                        },
+                        "cn_name": "视频发送丢包数",
+                        "en_name": "videotx_packetloss",
+                        "operate_key": "meeting[2].packetLoss",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "4c8a772aa2bd462d945837cd7a3175aa",
+                                "i18n": {
+                                    "cn_name": "视频发送丢包数较高为{0}个"
+                                },
+                                "cn_name": "视频发送丢包数较高为{0}个",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "5701efa7bb3f439abf4ba7ac91f83868",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "be5b023cfc774fc495981d34b37d5866",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "14771c6e3d5044f38a7cd274ccc2a4c3",
+                                        "normal": {
+                                            "id": "14771c6e3d5044f38a7cd274ccc2a4c3",
+                                            "i18n": {
+                                                "cn_name": "视频发送丢包数",
+                                                "en_name": "videotx_packetloss"
+                                            },
+                                            "cn_name": "视频发送丢包数",
+                                            "en_name": "videotx_packetloss",
+                                            "operate_key": "meeting[2].packetLoss",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "3000"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "7691606489c745b885e10584f62b3e9d",
+                                "i18n": {
+                                    "cn_name": "视频发送丢包数较高为{0}个"
+                                },
+                                "cn_name": "视频发送丢包数较高为{0}个",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "82e180ddb6e843148c2f9140f5b05e31",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "14771c6e3d5044f38a7cd274ccc2a4c3",
+                                        "normal": {
+                                            "id": "14771c6e3d5044f38a7cd274ccc2a4c3",
+                                            "i18n": {
+                                                "cn_name": "视频发送丢包数",
+                                                "en_name": "videotx_packetloss"
+                                            },
+                                            "cn_name": "视频发送丢包数",
+                                            "en_name": "videotx_packetloss",
+                                            "operate_key": "meeting[2].packetLoss",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "5000"
+                                    },
+                                    {
+                                        "id": "c3113221d71d46eb8c097233d60172c2",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1a847f77646741babdf0b14cea9cfe71",
+                        "i18n": {
+                            "cn_name": "视频发送码率",
+                            "en_name": "videotx_actualbitrate"
+                        },
+                        "cn_name": "视频发送码率",
+                        "en_name": "videotx_actualbitrate",
+                        "operate_key": "meeting[2].actualBitRate",
+                        "unit": "Kb",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "1f86451b62b34c208001d1905464bef6",
+                                "i18n": {
+                                    "cn_name": "请检测本地摄像头，视频发送码率为{0}Kb"
+                                },
+                                "cn_name": "请检测本地摄像头，视频发送码率为{0}Kb",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "a20984da770349fba6adf3fbf81b8810",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "1a847f77646741babdf0b14cea9cfe71",
+                                        "normal": {
+                                            "id": "1a847f77646741babdf0b14cea9cfe71",
+                                            "i18n": {
+                                                "cn_name": "视频发送码率",
+                                                "en_name": "videotx_actualbitrate"
+                                            },
+                                            "cn_name": "视频发送码率",
+                                            "en_name": "videotx_actualbitrate",
+                                            "operate_key": "meeting[2].actualBitRate",
+                                            "unit": "Kb"
+                                        },
+                                        "symble": "<",
+                                        "val": "500"
+                                    },
+                                    {
+                                        "id": "fcb4ab2797144f938a49e4563fb88cb0",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "80189fd9a1494d1088293349a0fb8896",
+                                "i18n": {
+                                    "cn_name": "请检测本地摄像头，视频发送码率为{0}Kb"
+                                },
+                                "cn_name": "请检测本地摄像头，视频发送码率为{0}Kb",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "a3d509326d604e7e9d39ce55d0f574d2",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "c841330646b34e11980a78da38e6a187",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "1a847f77646741babdf0b14cea9cfe71",
+                                        "normal": {
+                                            "id": "1a847f77646741babdf0b14cea9cfe71",
+                                            "i18n": {
+                                                "cn_name": "视频发送码率",
+                                                "en_name": "videotx_actualbitrate"
+                                            },
+                                            "cn_name": "视频发送码率",
+                                            "en_name": "videotx_actualbitrate",
+                                            "operate_key": "meeting[2].actualBitRate",
+                                            "unit": "Kb"
+                                        },
+                                        "symble": "<",
+                                        "val": "1000"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "21b01d9338ef4e6c8ca6c5331aafa8e3",
+                        "i18n": {
+                            "cn_name": "第二个摄像头连接状态",
+                            "en_name": "vicecamera_connectedstatus"
+                        },
+                        "cn_name": "第二个摄像头连接状态",
+                        "en_name": "vicecamera_connectedstatus",
+                        "operate_key": "camera[1].connected",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "27d5b6c57a54478ca1e508c769e7c44f",
+                        "i18n": {
+                            "cn_name": "视频接收码率",
+                            "en_name": "videorx_actualbitrate"
+                        },
+                        "cn_name": "视频接收码率",
+                        "en_name": "videorx_actualbitrate",
+                        "operate_key": "meeting[3].actualBitRate",
+                        "unit": "Kb",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "a5f21bf6adb243868d2e9d870716193a",
+                                "i18n": {
+                                    "cn_name": "请检测本地摄像头，视频接收码率为{0}Kb"
+                                },
+                                "cn_name": "请检测本地摄像头，视频接收码率为{0}Kb",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "2452e901c5df49ee8c325f564a9052f4",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "27d5b6c57a54478ca1e508c769e7c44f",
+                                        "normal": {
+                                            "id": "27d5b6c57a54478ca1e508c769e7c44f",
+                                            "i18n": {
+                                                "cn_name": "视频接收码率",
+                                                "en_name": "videorx_actualbitrate"
+                                            },
+                                            "cn_name": "视频接收码率",
+                                            "en_name": "videorx_actualbitrate",
+                                            "operate_key": "meeting[3].actualBitRate",
+                                            "unit": "Kb"
+                                        },
+                                        "symble": "<",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "id": "ed694e56b72e4e079b28de52088e36ec",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "acb5f2f4426940b2a67fbab9597e149c",
+                                "i18n": {
+                                    "cn_name": "请检测本地摄像头，视频接收码率为{0}Kb"
+                                },
+                                "cn_name": "请检测本地摄像头，视频接收码率为{0}Kb",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "11761a0bafad4e3b829d241043ba96eb",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "27d5b6c57a54478ca1e508c769e7c44f",
+                                        "normal": {
+                                            "id": "27d5b6c57a54478ca1e508c769e7c44f",
+                                            "i18n": {
+                                                "cn_name": "视频接收码率",
+                                                "en_name": "videorx_actualbitrate"
+                                            },
+                                            "cn_name": "视频接收码率",
+                                            "en_name": "videorx_actualbitrate",
+                                            "operate_key": "meeting[3].actualBitRate",
+                                            "unit": "Kb"
+                                        },
+                                        "symble": "<",
+                                        "val": "500"
+                                    },
+                                    {
+                                        "id": "d4730fdcab544fe8925364def616197b",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2c1f0c0df68048deb04d07487ca8821b",
+                        "i18n": {
+                            "cn_name": "音频发送质量",
+                            "en_name": "audiotx_meetingquality"
+                        },
+                        "cn_name": "音频发送质量",
+                        "en_name": "audiotx_meetingquality",
+                        "operate_key": "meeting[0].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "2e0d81666674402e89a99d732319814e",
+                        "i18n": {
+                            "cn_name": "视频接收丢包数",
+                            "en_name": "videorx_packetloss"
+                        },
+                        "cn_name": "视频接收丢包数",
+                        "en_name": "videorx_packetloss",
+                        "operate_key": "meeting[3].packetLoss",
+                        "unit": "个",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "01873589a9224be8aeb0986f09ec3e14",
+                                "i18n": {
+                                    "cn_name": "视频接收较高丢包数为{0}个"
+                                },
+                                "cn_name": "视频接收较高丢包数为{0}个",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "068aea876fbc4735b9da4b140ada8f15",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "b243858346c04fa9b228d69dbe4d6d57",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "2e0d81666674402e89a99d732319814e",
+                                        "normal": {
+                                            "id": "2e0d81666674402e89a99d732319814e",
+                                            "i18n": {
+                                                "cn_name": "视频接收丢包数",
+                                                "en_name": "videorx_packetloss"
+                                            },
+                                            "cn_name": "视频接收丢包数",
+                                            "en_name": "videorx_packetloss",
+                                            "operate_key": "meeting[3].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "3000"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "429106e36c654b8fa511a444e2f9e905",
+                                "i18n": {
+                                    "cn_name": "视频接收较高丢包数为{0}个"
+                                },
+                                "cn_name": "视频接收较高丢包数为{0}个",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "a89cea9dfad94ff0b517563cf7b44b1a",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "cba72860998946f1b87dc9dc4dfc9b72",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "2e0d81666674402e89a99d732319814e",
+                                        "normal": {
+                                            "id": "2e0d81666674402e89a99d732319814e",
+                                            "i18n": {
+                                                "cn_name": "视频接收丢包数",
+                                                "en_name": "videorx_packetloss"
+                                            },
+                                            "cn_name": "视频接收丢包数",
+                                            "en_name": "videorx_packetloss",
+                                            "operate_key": "meeting[3].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "5000"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2f7da6f9847240c7834d5cbb0df516af",
+                        "i18n": {
+                            "cn_name": "音频发送丢包数",
+                            "en_name": "audiotx_packetloss"
+                        },
+                        "cn_name": "音频发送丢包数",
+                        "en_name": "audiotx_packetloss",
+                        "operate_key": "meeting[0].packetLoss",
+                        "unit": "个",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "3d304accdd2f4a87978121710be96de0",
+                                "i18n": {
+                                    "cn_name": "音频发送较高丢包数为{0}个"
+                                },
+                                "cn_name": "音频发送较高丢包数为{0}个",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "77e82cf11e5c4d6f9e4b9604c93b921f",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "e44fcb52692542e5a883d0f259fd6730",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "2f7da6f9847240c7834d5cbb0df516af",
+                                        "normal": {
+                                            "id": "2f7da6f9847240c7834d5cbb0df516af",
+                                            "i18n": {
+                                                "cn_name": "音频发送丢包数",
+                                                "en_name": "audiotx_packetloss"
+                                            },
+                                            "cn_name": "音频发送丢包数",
+                                            "en_name": "audiotx_packetloss",
+                                            "operate_key": "meeting[0].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "5000"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "c120179fd4f64493ad094f0001dce88d",
+                                "i18n": {
+                                    "cn_name": "音频发送较高丢包数为{0}个"
+                                },
+                                "cn_name": "音频发送较高丢包数为{0}个",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "7775ad0ca6654bdd9eceff38f501a200",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "f60c7f8aa69d4eaebda7e07c13e0504d",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "2f7da6f9847240c7834d5cbb0df516af",
+                                        "normal": {
+                                            "id": "2f7da6f9847240c7834d5cbb0df516af",
+                                            "i18n": {
+                                                "cn_name": "音频发送丢包数",
+                                                "en_name": "audiotx_packetloss"
+                                            },
+                                            "cn_name": "音频发送丢包数",
+                                            "en_name": "audiotx_packetloss",
+                                            "operate_key": "meeting[0].packetLoss",
+                                            "unit": "个"
+                                        },
+                                        "symble": ">",
+                                        "val": "3000"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "350dc72d18944d90a76760cef059a06e",
+                        "i18n": {
+                            "cn_name": "视频传输丢包率",
+                            "en_name": "videotx_percentpacketloss"
+                        },
+                        "cn_name": "视频传输丢包率",
+                        "en_name": "videotx_percentpacketloss",
+                        "operate_key": "meeting[2].percentPacketLoss",
+                        "unit": "%",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "35cbc81c6e454c5a99e04a139d303b78",
+                        "i18n": {
+                            "cn_name": "视频接收质量",
+                            "en_name": "videorx_qualityindicator"
+                        },
+                        "cn_name": "视频接收质量",
+                        "en_name": "videorx_qualityindicator",
+                        "operate_key": "meeting[3].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "3b25dfde54be4ac4a6d96eef30ae879b",
+                        "i18n": {
+                            "cn_name": "双流输入连接状态",
+                            "en_name": "dualflow_connectedstatus"
+                        },
+                        "cn_name": "双流输入连接状态",
+                        "en_name": "dualflow_connectedstatus",
+                        "operate_key": "camera[2].connected",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "3d3c126a2a404064a4dd0c206d52efb5",
+                        "i18n": {
+                            "cn_name": "视频接收质量",
+                            "en_name": "videorx_meetingquality"
+                        },
+                        "cn_name": "视频接收质量",
+                        "en_name": "videorx_meetingquality",
+                        "operate_key": "meeting[3].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "42184055fcee49f5979c2b774d56beab",
+                        "i18n": {
+                            "cn_name": "视频发送延迟",
+                            "en_name": "videotx_latency"
+                        },
+                        "cn_name": "视频发送延迟",
+                        "en_name": "videotx_latency",
+                        "operate_key": "meeting[2].latency",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "4cceaad3abc2435ab5d7d1169cc09440",
+                                "i18n": {
+                                    "cn_name": "视频发送延迟{0}ms"
+                                },
+                                "cn_name": "视频发送延迟{0}ms",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "2d078c1ad165409e80c5664f6be1b461",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "79e78f148398476ea6d03f60482f6af0",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "42184055fcee49f5979c2b774d56beab",
+                                        "normal": {
+                                            "id": "42184055fcee49f5979c2b774d56beab",
+                                            "i18n": {
+                                                "cn_name": "视频发送延迟",
+                                                "en_name": "videotx_latency"
+                                            },
+                                            "cn_name": "视频发送延迟",
+                                            "en_name": "videotx_latency",
+                                            "operate_key": "meeting[2].latency",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "81cdd13ee2e8449fa7f29bc07c993f21",
+                                "i18n": {
+                                    "cn_name": "视频发送延迟{0}ms"
+                                },
+                                "cn_name": "视频发送延迟{0}ms",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "1272ba94629e4cc9ba2bf82cbe6c95f9",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "7c98ec88dd0f4389980a920006fcddb4",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "42184055fcee49f5979c2b774d56beab",
+                                        "normal": {
+                                            "id": "42184055fcee49f5979c2b774d56beab",
+                                            "i18n": {
+                                                "cn_name": "视频发送延迟",
+                                                "en_name": "videotx_latency"
+                                            },
+                                            "cn_name": "视频发送延迟",
+                                            "en_name": "videotx_latency",
+                                            "operate_key": "meeting[2].latency",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "441b69cc158844ac8279d3cb877d6892",
+                        "i18n": {
+                            "cn_name": "视频发送质量",
+                            "en_name": "videotx_meetingquality"
+                        },
+                        "cn_name": "视频发送质量",
+                        "en_name": "videotx_meetingquality",
+                        "operate_key": "meeting[2].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "49f6b3d7d9314a14a6d754ad013c1443",
+                        "i18n": {
+                            "cn_name": "音频接收延迟",
+                            "en_name": "audiorx_latency"
+                        },
+                        "cn_name": "音频接收延迟",
+                        "en_name": "audiorx_latency",
+                        "operate_key": "meeting[1].latency",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "7218c85df2ae4de0981a0b59ecf04060",
+                                "i18n": {
+                                    "cn_name": "音频接收延迟为{0}ms"
+                                },
+                                "cn_name": "音频接收延迟为{0}ms",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "f528eeeb18ea494b9138e11efc9a4c1f",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "ff3e9677a19c460882fd7bfc9c1c9689",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "49f6b3d7d9314a14a6d754ad013c1443",
+                                        "normal": {
+                                            "id": "49f6b3d7d9314a14a6d754ad013c1443",
+                                            "i18n": {
+                                                "cn_name": "音频接收延迟",
+                                                "en_name": "audiorx_latency"
+                                            },
+                                            "cn_name": "音频接收延迟",
+                                            "en_name": "audiorx_latency",
+                                            "operate_key": "meeting[1].latency",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "c2794de46c3f4ba88c442de90b6df702",
+                                "i18n": {
+                                    "cn_name": "音频接收延迟为{0}ms"
+                                },
+                                "cn_name": "音频接收延迟为{0}ms",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "bbb5d5d62d964f43978064d57fe2fafb",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "c64f57846ceb4318b0cfa442ef11ccb4",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "49f6b3d7d9314a14a6d754ad013c1443",
+                                        "normal": {
+                                            "id": "49f6b3d7d9314a14a6d754ad013c1443",
+                                            "i18n": {
+                                                "cn_name": "音频接收延迟",
+                                                "en_name": "audiorx_latency"
+                                            },
+                                            "cn_name": "音频接收延迟",
+                                            "en_name": "audiorx_latency",
+                                            "operate_key": "meeting[1].latency",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "58d76afc74744e90bed3e5c066678f0e",
+                        "i18n": {
+                            "cn_name": "线性麦音频输入状态",
+                            "en_name": "linemic_inputstatus"
+                        },
+                        "cn_name": "线性麦音频输入状态",
+                        "en_name": "linemic_inputstatus",
+                        "operate_key": "micro.LINE_IN",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "c313ee6e7848450eac5ceeaa08afa89e",
+                                "i18n": {
+                                    "cn_name": "无音频输入"
+                                },
+                                "cn_name": "无音频输入",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "18c9b65640cf4f3088aa093e4a735c38",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "0c58194540384a73a19d82480b6362f1",
+                                        "normal": {
+                                            "id": "0c58194540384a73a19d82480b6362f1",
+                                            "i18n": {
+                                                "cn_name": "全向麦音频输入状态",
+                                                "en_name": "omnimic_inputstatus"
+                                            },
+                                            "cn_name": "全向麦音频输入状态",
+                                            "en_name": "omnimic_inputstatus",
+                                            "operate_key": "micro.POLYCOM_MIC",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "false"
+                                    },
+                                    {
+                                        "id": "fb4e7b01f4ce4e3d99ae26a1d5e0bc0c",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "58d76afc74744e90bed3e5c066678f0e",
+                                        "normal": {
+                                            "id": "58d76afc74744e90bed3e5c066678f0e",
+                                            "i18n": {
+                                                "cn_name": "线性麦音频输入状态",
+                                                "en_name": "linemic_inputstatus"
+                                            },
+                                            "cn_name": "线性麦音频输入状态",
+                                            "en_name": "linemic_inputstatus",
+                                            "operate_key": "micro.LINE_IN",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "68760f3e8c994f4c92214dd545a9a680",
+                        "i18n": {
+                            "cn_name": "主摄像头连接状态",
+                            "en_name": "maincamera_connectedstatus"
+                        },
+                        "cn_name": "主摄像头连接状态",
+                        "en_name": "maincamera_connectedstatus",
+                        "operate_key": "camera[0].connected",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "33b44c9e0e294fa58110a9b21aaa50fb",
+                                "i18n": {
+                                    "cn_name": "无摄像头接入"
+                                },
+                                "cn_name": "无摄像头接入",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "9ed9583d1ec44b68a7d3addaf7460533",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "68760f3e8c994f4c92214dd545a9a680",
+                                        "normal": {
+                                            "id": "68760f3e8c994f4c92214dd545a9a680",
+                                            "i18n": {
+                                                "cn_name": "主摄像头连接状态",
+                                                "en_name": "maincamera_connectedstatus"
+                                            },
+                                            "cn_name": "主摄像头连接状态",
+                                            "en_name": "maincamera_connectedstatus",
+                                            "operate_key": "camera[0].connected",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "false"
+                                    },
+                                    {
+                                        "id": "e0e7f6e25da24a8c87e20d65a81278ea",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "21b01d9338ef4e6c8ca6c5331aafa8e3",
+                                        "normal": {
+                                            "id": "21b01d9338ef4e6c8ca6c5331aafa8e3",
+                                            "i18n": {
+                                                "cn_name": "第二个摄像头连接状态",
+                                                "en_name": "vicecamera_connectedstatus"
+                                            },
+                                            "cn_name": "第二个摄像头连接状态",
+                                            "en_name": "vicecamera_connectedstatus",
+                                            "operate_key": "camera[1].connected",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "6de9138de24d4de4be1e82431f329995",
+                        "i18n": {
+                            "cn_name": "麦克风静音状态",
+                            "en_name": "micro_mutedstatus"
+                        },
+                        "cn_name": "麦克风静音状态",
+                        "en_name": "micro_mutedstatus",
+                        "operate_key": "micro_muted",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "e8339e46c7b849eb8a4fc4bf6a76c1c6",
+                                "i18n": {
+                                    "cn_name": "设备已静音"
+                                },
+                                "cn_name": "设备已静音",
+                                "grade": "major",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "ecae29241cb241979cb399b12a7b4f4a",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "6de9138de24d4de4be1e82431f329995",
+                                        "normal": {
+                                            "id": "6de9138de24d4de4be1e82431f329995",
+                                            "i18n": {
+                                                "cn_name": "麦克风静音状态",
+                                                "en_name": "micro_mutedstatus"
+                                            },
+                                            "cn_name": "麦克风静音状态",
+                                            "en_name": "micro_mutedstatus",
+                                            "operate_key": "micro_muted",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "7109133b6e3c4559aba289d2d3f8c4fc",
+                        "i18n": {
+                            "cn_name": "音频接收丢包率",
+                            "en_name": "audiorx_percentpacketloss"
+                        },
+                        "cn_name": "音频接收丢包率",
+                        "en_name": "audiorx_percentpacketloss",
+                        "operate_key": "meeting[1].percentPacketLoss",
+                        "unit": "%",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "8bd215c09c054c38a3121111d3181272",
+                                "i18n": {
+                                    "cn_name": "音频接收丢包率为{0}%"
+                                },
+                                "cn_name": "音频接收丢包率为{0}%",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "5ab2008c40534e7eb74a6c900aa58c6a",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "a92323e1ca2840dea7dbc7c563ca3174",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "7109133b6e3c4559aba289d2d3f8c4fc",
+                                        "normal": {
+                                            "id": "7109133b6e3c4559aba289d2d3f8c4fc",
+                                            "i18n": {
+                                                "cn_name": "音频接收丢包率",
+                                                "en_name": "audiorx_percentpacketloss"
+                                            },
+                                            "cn_name": "音频接收丢包率",
+                                            "en_name": "audiorx_percentpacketloss",
+                                            "operate_key": "meeting[1].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "1"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "de67b24531be4816a3dbe3b3e6220d59",
+                                "i18n": {
+                                    "cn_name": "音频接收丢包率为{0}%"
+                                },
+                                "cn_name": "音频接收丢包率为{0}%",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "03bd2cae08f3495eaf8105be6745ebe2",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "f18443329a384e03b518023962273ddd",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "7109133b6e3c4559aba289d2d3f8c4fc",
+                                        "normal": {
+                                            "id": "7109133b6e3c4559aba289d2d3f8c4fc",
+                                            "i18n": {
+                                                "cn_name": "音频接收丢包率",
+                                                "en_name": "audiorx_percentpacketloss"
+                                            },
+                                            "cn_name": "音频接收丢包率",
+                                            "en_name": "audiorx_percentpacketloss",
+                                            "operate_key": "meeting[1].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "3"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "7cec873fb4fb4c6386e59d1ef6b8d8d6",
+                        "i18n": {
+                            "cn_name": "音频接收网络抖动",
+                            "en_name": "audiorx_jitter"
+                        },
+                        "cn_name": "音频接收网络抖动",
+                        "en_name": "audiorx_jitter",
+                        "operate_key": "meeting[1].jitter",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "9472c075672144c38b1e38c141eed97f",
+                                "i18n": {
+                                    "cn_name": "音频接收出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "音频接收出现抖动为{0}毫秒",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "3dc665d7fcc0463cb822f0c5e900a3ba",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "7cec873fb4fb4c6386e59d1ef6b8d8d6",
+                                        "normal": {
+                                            "id": "7cec873fb4fb4c6386e59d1ef6b8d8d6",
+                                            "i18n": {
+                                                "cn_name": "音频接收网络抖动",
+                                                "en_name": "audiorx_jitter"
+                                            },
+                                            "cn_name": "音频接收网络抖动",
+                                            "en_name": "audiorx_jitter",
+                                            "operate_key": "meeting[1].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    },
+                                    {
+                                        "id": "57fa709e72eb4a81819fb2ceee55775c",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "ee3911ec26b840d588663ea2636f7082",
+                                "i18n": {
+                                    "cn_name": "音频接收出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "音频接收出现抖动为{0}毫秒",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "ddc8c937a949466f8db1ce90e247f3e5",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "e6ed737698b94dbb87b0f78630c4a5a7",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "7cec873fb4fb4c6386e59d1ef6b8d8d6",
+                                        "normal": {
+                                            "id": "7cec873fb4fb4c6386e59d1ef6b8d8d6",
+                                            "i18n": {
+                                                "cn_name": "音频接收网络抖动",
+                                                "en_name": "audiorx_jitter"
+                                            },
+                                            "cn_name": "音频接收网络抖动",
+                                            "en_name": "audiorx_jitter",
+                                            "operate_key": "meeting[1].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "8076b9d014f643a9991d09c9f8823deb",
+                        "i18n": {
+                            "cn_name": "视频接收网络抖动",
+                            "en_name": "videorx_jitter"
+                        },
+                        "cn_name": "视频接收网络抖动",
+                        "en_name": "videorx_jitter",
+                        "operate_key": "meeting[3].jitter",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "608edaf20fbb4277bf0ad3a58bbaf709",
+                                "i18n": {
+                                    "cn_name": "视频接收出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "视频接收出现抖动为{0}毫秒",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "6692714bbc28423887739bd4b571b969",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "c98e43e3e3f24363b88c7d89038cf68f",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "8076b9d014f643a9991d09c9f8823deb",
+                                        "normal": {
+                                            "id": "8076b9d014f643a9991d09c9f8823deb",
+                                            "i18n": {
+                                                "cn_name": "视频接收网络抖动",
+                                                "en_name": "videorx_jitter"
+                                            },
+                                            "cn_name": "视频接收网络抖动",
+                                            "en_name": "videorx_jitter",
+                                            "operate_key": "meeting[3].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "9bbba870865e4bf991092289c8d0b6eb",
+                                "i18n": {
+                                    "cn_name": "视频接收出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "视频接收出现抖动为{0}毫秒",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "6eb3ec0f98e64d1283e4ed8c131e4ac3",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "8076b9d014f643a9991d09c9f8823deb",
+                                        "normal": {
+                                            "id": "8076b9d014f643a9991d09c9f8823deb",
+                                            "i18n": {
+                                                "cn_name": "视频接收网络抖动",
+                                                "en_name": "videorx_jitter"
+                                            },
+                                            "cn_name": "视频接收网络抖动",
+                                            "en_name": "videorx_jitter",
+                                            "operate_key": "meeting[3].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    },
+                                    {
+                                        "id": "8fb5c14c97474de6bed95dacb40d8ccc",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "8077a0ad44bf47bc9e4c7fc4ba693411",
+                        "i18n": {
+                            "cn_name": "视频发送质量",
+                            "en_name": "videotx_qualityIndicator"
+                        },
+                        "cn_name": "视频发送质量",
+                        "en_name": "videotx_qualityIndicator",
+                        "operate_key": "meeting[2].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "8f3e26814ca94cc6937783d7af43159c",
+                        "i18n": {
+                            "cn_name": "音频发送网络抖动",
+                            "en_name": "audiotx_jitter"
+                        },
+                        "cn_name": "音频发送网络抖动",
+                        "en_name": "audiotx_jitter",
+                        "operate_key": "meeting[0].jitter",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "59441773968d428fa6dfda6bc7463b48",
+                                "i18n": {
+                                    "cn_name": "音频发送出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "音频发送出现抖动为{0}毫秒",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "3b6434a7c4224b64b3913494b7b7aabd",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "8f3e26814ca94cc6937783d7af43159c",
+                                        "normal": {
+                                            "id": "8f3e26814ca94cc6937783d7af43159c",
+                                            "i18n": {
+                                                "cn_name": "音频发送网络抖动",
+                                                "en_name": "audiotx_jitter"
+                                            },
+                                            "cn_name": "音频发送网络抖动",
+                                            "en_name": "audiotx_jitter",
+                                            "operate_key": "meeting[0].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    },
+                                    {
+                                        "id": "49bc58f6e90f486aaa9db79e626781b6",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "5e63d837dc7040f6b579e862aa8ac6b1",
+                                "i18n": {
+                                    "cn_name": "音频发送出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "音频发送出现抖动为{0}毫秒",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "30e5b7403a824c5da0ded51f6d07a9ae",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "8f3e26814ca94cc6937783d7af43159c",
+                                        "normal": {
+                                            "id": "8f3e26814ca94cc6937783d7af43159c",
+                                            "i18n": {
+                                                "cn_name": "音频发送网络抖动",
+                                                "en_name": "audiotx_jitter"
+                                            },
+                                            "cn_name": "音频发送网络抖动",
+                                            "en_name": "audiotx_jitter",
+                                            "operate_key": "meeting[0].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    },
+                                    {
+                                        "id": "c6cf1111694f49dab70d8431fa30935d",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "b6641a5ad33b4668b2110e5b73facfa3",
+                        "i18n": {
+                            "cn_name": "全向麦连接状态",
+                            "en_name": "omnimic_connectedstatus"
+                        },
+                        "cn_name": "全向麦连接状态",
+                        "en_name": "omnimic_connectedstatus",
+                        "operate_key": "system_status_microphones",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "bb51c4e93aa24cfcb19df9105a0d1b68",
+                        "i18n": {
+                            "cn_name": "音频发送延迟",
+                            "en_name": "audiotx_latency"
+                        },
+                        "cn_name": "音频发送延迟",
+                        "en_name": "audiotx_latency",
+                        "operate_key": "meeting[0].latency",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "c9a96a7f5a594d668d4ce6ede1cf6006",
+                        "i18n": {
+                            "cn_name": "使用时长",
+                            "en_name": "usagetime_statistics"
+                        },
+                        "cn_name": "使用时长",
+                        "en_name": "usagetime_statistics",
+                        "operate_key": "comm_statistics_totaltimeincalls",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "dff8acdc278c43669e73d79700ea9bea",
+                        "i18n": {
+                            "cn_name": "与会状态",
+                            "en_name": "meeting_status"
+                        },
+                        "cn_name": "与会状态",
+                        "en_name": "meeting_status",
+                        "operate_key": "system_status_inacall",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "eb0e4c8bb47542dbbf27a6a82c63bf34",
+                        "i18n": {
+                            "cn_name": "视频接收丢包率",
+                            "en_name": "videorx_percentpacketloss"
+                        },
+                        "cn_name": "视频接收丢包率",
+                        "en_name": "videorx_percentpacketloss",
+                        "operate_key": "meeting[3].percentPacketLoss",
+                        "unit": "%",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "158130c81a93490f88e96a87322f2705",
+                                "i18n": {
+                                    "cn_name": "视频接收丢包率为{0}%"
+                                },
+                                "cn_name": "视频接收丢包率为{0}%",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "382dce7201ae4bf18804587f0047521f",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "e9c810f1170841a69652ac5d74887b5c",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "eb0e4c8bb47542dbbf27a6a82c63bf34",
+                                        "normal": {
+                                            "id": "eb0e4c8bb47542dbbf27a6a82c63bf34",
+                                            "i18n": {
+                                                "cn_name": "视频接收丢包率",
+                                                "en_name": "videorx_percentpacketloss"
+                                            },
+                                            "cn_name": "视频接收丢包率",
+                                            "en_name": "videorx_percentpacketloss",
+                                            "operate_key": "meeting[3].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "1"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "7f6dc76f8a1643cc9e440fa8243bb7cc",
+                                "i18n": {
+                                    "cn_name": "视频接收丢包率为{0}%"
+                                },
+                                "cn_name": "视频接收丢包率为{0}%",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "3acde477e55a4b09b52cc56a157f9170",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "728d6a469d914c4fa6d8675172197bb6",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "eb0e4c8bb47542dbbf27a6a82c63bf34",
+                                        "normal": {
+                                            "id": "eb0e4c8bb47542dbbf27a6a82c63bf34",
+                                            "i18n": {
+                                                "cn_name": "视频接收丢包率",
+                                                "en_name": "videorx_percentpacketloss"
+                                            },
+                                            "cn_name": "视频接收丢包率",
+                                            "en_name": "videorx_percentpacketloss",
+                                            "operate_key": "meeting[3].percentPacketLoss",
+                                            "unit": "%"
+                                        },
+                                        "symble": ">",
+                                        "val": "3"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ed55d527ef374fbfaefdff4bf8498d4a",
+                        "i18n": {
+                            "cn_name": "测试指标",
+                            "en_name": "test"
+                        },
+                        "cn_name": "测试指标",
+                        "en_name": "test",
+                        "operate_key": "\u201c\u201d",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "f285063d419549d49cd8ef55d0c54073",
+                        "i18n": {
+                            "cn_name": "视频传输网络抖动",
+                            "en_name": "videotx_jitter"
+                        },
+                        "cn_name": "视频传输网络抖动",
+                        "en_name": "videotx_jitter",
+                        "operate_key": "meeting[2].jitter",
+                        "unit": "ms",
+                        "order_num": 0,
+                        "grades": [
+                            {
+                                "id": "15822c8f4e0a476dbe624a4518e7967c",
+                                "i18n": {
+                                    "cn_name": "视频发送出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "视频发送出现抖动为{0}毫秒",
+                                "grade": "major",
+                                "order_num": 1,
+                                "rulers": [
+                                    {
+                                        "id": "87e6fbf8f4724b2c91c06990a092843f",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    },
+                                    {
+                                        "id": "a40e0493425e4027814f7553f254b5f5",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "f285063d419549d49cd8ef55d0c54073",
+                                        "normal": {
+                                            "id": "f285063d419549d49cd8ef55d0c54073",
+                                            "i18n": {
+                                                "cn_name": "视频传输网络抖动",
+                                                "en_name": "videotx_jitter"
+                                            },
+                                            "cn_name": "视频传输网络抖动",
+                                            "en_name": "videotx_jitter",
+                                            "operate_key": "meeting[2].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "100"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "1ee856791d3640e6b367577e8b82224c",
+                                "i18n": {
+                                    "cn_name": "视频发送出现抖动为{0}毫秒"
+                                },
+                                "cn_name": "视频发送出现抖动为{0}毫秒",
+                                "grade": "critical",
+                                "order_num": 0,
+                                "rulers": [
+                                    {
+                                        "id": "44959ba3f7fd4381b6ea20f812ac6563",
+                                        "i18n": {},
+                                        "logic": "and",
+                                        "normal_id": "f285063d419549d49cd8ef55d0c54073",
+                                        "normal": {
+                                            "id": "f285063d419549d49cd8ef55d0c54073",
+                                            "i18n": {
+                                                "cn_name": "视频传输网络抖动",
+                                                "en_name": "videotx_jitter"
+                                            },
+                                            "cn_name": "视频传输网络抖动",
+                                            "en_name": "videotx_jitter",
+                                            "operate_key": "meeting[2].jitter",
+                                            "unit": "ms"
+                                        },
+                                        "symble": ">",
+                                        "val": "200"
+                                    },
+                                    {
+                                        "id": "9357b83644844e079256d67e34ec92a2",
+                                        "i18n": {},
+                                        "logic": "",
+                                        "normal_id": "dff8acdc278c43669e73d79700ea9bea",
+                                        "normal": {
+                                            "id": "dff8acdc278c43669e73d79700ea9bea",
+                                            "i18n": {
+                                                "cn_name": "与会状态",
+                                                "en_name": "meeting_status"
+                                            },
+                                            "cn_name": "与会状态",
+                                            "en_name": "meeting_status",
+                                            "operate_key": "system_status_inacall",
+                                            "unit": "_"
+                                        },
+                                        "symble": "=",
+                                        "val": "up"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "f608a67143644f7c8d51166b50afe36b",
+                        "i18n": {
+                            "cn_name": "音频发送质量",
+                            "en_name": "audiotx_qualityindicator"
+                        },
+                        "cn_name": "音频发送质量",
+                        "en_name": "audiotx_qualityindicator",
+                        "operate_key": "meeting[0].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "f78915f5c11841f0b55fb25c50a336fe",
+                        "i18n": {
+                            "cn_name": "音频接收质量",
+                            "en_name": "audiorx_qualityindicator"
+                        },
+                        "cn_name": "音频接收质量",
+                        "en_name": "audiorx_qualityindicator",
+                        "operate_key": "meeting[1].qualityIndicator",
+                        "unit": "_",
+                        "order_num": 0,
+                        "grades": []
+                    },
+                    {
+                        "id": "8294685b4ca34762bca179d59e685a41",
+                        "i18n": {
+                            "cn_name": "111",
+                            "en_name": "1563173376177"
+                        },
+                        "cn_name": "111",
+                        "en_name": "1563173376177",
+                        "operate_key": "qwqqqqwq",
+                        "unit": "",
+                        "order_num": 1563173376177,
+                        "grades": []
+                    }
+                ]
+            }
+        }
+    }
+}

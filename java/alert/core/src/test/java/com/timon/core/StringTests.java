@@ -2,6 +2,7 @@ package com.timon.core;
 
 import com.google.common.base.Enums;
 import com.timon.common.DataUtil;
+import com.timon.common.Device;
 import com.timon.common.Level;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -15,6 +16,10 @@ import java.util.Optional;
 public class StringTests {
     @Test
     public void testFormat(){
+
+        Device dd =  Device.valueOf("Hdx7000");
+
+
         Level ol = Enums.getIfPresent(Level.class, "big").orNull();
         log.info("l={}", ol );
 

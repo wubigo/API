@@ -41,6 +41,12 @@ public class JsonUtil {
         return null;
     }
 
+    /**
+     * 根据path读取对象的值
+     * @param json
+     * @param jpath
+     * @return
+     */
     public  static Object read(String json, String jpath){
         DocumentContext dc  = getContext(json);
         return  dc.read(jpath);
@@ -75,7 +81,8 @@ public class JsonUtil {
     public static Object fromMap(String json){
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(json, AlertHeader.class);
+            AlertHeader  ah= objectMapper.readValue(json, AlertHeader.class);
+            return ah;
         } catch (IOException e) {
             log.error(e.getMessage());
         }

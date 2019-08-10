@@ -1,0 +1,8 @@
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:6088/user
+
+
+server:
+    port: 8088

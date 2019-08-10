@@ -16,11 +16,14 @@ public class Alert {
 
     private String sno;
     private String name;
-    private int location_id;
+    private String location_id;
     private String level;
     private long time;
     private String detail;
+
+    @Column(name="is_read")
     private int isRead;
+
     private Date createdAt;
 
     public Alert(){}

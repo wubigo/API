@@ -13,7 +13,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Location {
-    int id;
+    String id;
     String cn_name;
     String en_name;
     // String dept;

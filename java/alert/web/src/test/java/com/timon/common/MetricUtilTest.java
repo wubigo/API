@@ -1,5 +1,6 @@
 package com.timon.common;
 
+import com.timon.alert.MetricRecord;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
+import java.util.List;
 
 
 @RunWith(SpringRunner.class)
@@ -29,9 +30,9 @@ public class MetricUtilTest {
     @Test
     public void initMetric() {
 
-        metricUtil.initMetric("SNO11");
+        List<MetricRecord> mrl = metricUtil.initMetric("SNO11");
+        JsonUtil.write("SNO11", mrl);
     }
-
 
     @Test
     public void contextLoads() {

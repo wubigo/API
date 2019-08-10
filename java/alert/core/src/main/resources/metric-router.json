@@ -1,0 +1,17 @@
+{
+    "device_sno": "FD154430C49FD7",
+    "device_type": "Cisco",
+    "metric_name": "switchport_status",
+    "metric_path": "bandwidth['GigabitEthernet0/0/28'][0]",
+    "sec_metric_path": null,
+    "sec_metric_name": null,
+    "range": null,
+    "mcl": [
+        {
+            "threshold": "0",
+            "level": "critical",
+            "expCondition": "Math.round(switchport_status*8/60/1024) >= threshold",
+            "desc": "GigabitEthernet0/0/28下载带宽为{}kb"
+        }
+    ]
+}

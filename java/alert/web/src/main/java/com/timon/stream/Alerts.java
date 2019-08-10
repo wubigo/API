@@ -1,7 +1,8 @@
 package com.timon.stream;
 
 import com.timon.common.JsonUtil;
-import com.timon.model.Alert;
+
+import com.timon.domain.Alert;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;

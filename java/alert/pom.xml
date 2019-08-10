@@ -64,6 +64,9 @@
         <module>sender</module>
         <module>reactor</module>
 		<module>oauth2</module>
+		<module>oauth2_res</module>
+		<module>oauth2_jwt</module>
+		<module>gateway</module>
     </modules>
 
 	<build>

@@ -1,7 +1,12 @@
 package com.timon.web;
 
+import com.timon.alert.MetricRecord;
+import com.timon.common.JsonUtil;
+import com.timon.common.MetricUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.reactivestreams.Subscription;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -9,11 +14,14 @@ import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
 @Component
 public class AlertPusher {
+    @Autowired
+    MetricUtil metricUtil;
     private final EmitterProcessor<ServerSentEvent<String>> emitter = EmitterProcessor.create();
 
     //The 3 seconds wait time between connections can be changed by the server.
@@ -48,10 +56,18 @@ public class AlertPusher {
     @KafkaListener(topics = "#{'${spring.kafka.topics}'.split(',')}",
             clientIdPrefix = "TiMon",
             groupId = "${spring.kafka.consumer.group-id}")
-    public  void broadcast(String jsonAlert){
+    public  void broadcast(ConsumerRecord<String, String> cr){
 
+        String topic = cr.topic();
+        String payload = cr.value();
+        if ( topic.equals("config") ){
+            log.info("config payload={}", payload);
+            List<MetricRecord> mrl = metricUtil.initMetric(payload);
+            JsonUtil.write(payload, mrl);
+            return;
+        }
+        String jsonAlert = payload;
         try {
-
             emitter.onNext(ServerSentEvent.builder(jsonAlert).event("alert").retry(d).id(UUID.randomUUID().toString()).build());
         } catch (Exception e) {
             log.error(e.getMessage());

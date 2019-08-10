@@ -45,13 +45,13 @@
             {
                 "threshold": "150",
                 "level": "critical",
-                "expCondition": "videotxbit> threshold && meetstatus == \"up\"",
+                "expCondition": "&& meetstatus == \"up\"  videotxbit> threshold ",
                 "desc": "请检测本地摄像头视频发送码率为{0}Kb"
             },
             {
                 "threshold": "200",
                 "level": "major",
-                "expCondition": "videotxbit > threshold && meetstatus == \"up\"",
+                "expCondition": "videotxbit < threshold1 &&  videotxbit > threshold2 && meetstatus == \"up\"",
                 "desc": "请检测本地摄像头视频发送码率为{0}Kb"
             }
         ]

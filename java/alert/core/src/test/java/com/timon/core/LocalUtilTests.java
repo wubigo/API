@@ -71,7 +71,7 @@ public class LocalUtilTests {
             for ( MetricRecord mr : ml ) {
                 AlertRecord ar = engine.run(msg, mr);
                 if (null != ar) {
-                    List<Location> locations = ar.getHeader().getLocation();
+                    List<Location> locations = ar.getHeader().getLocations();
                     localUtil.resetLocal(locations);
                     break;
                 }

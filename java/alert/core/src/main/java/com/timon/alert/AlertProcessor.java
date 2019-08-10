@@ -6,6 +6,7 @@ import com.timon.common.JsonUtil;
 import com.timon.common.Level;
 import com.timon.common.RedisUtil;
 import com.timon.domain.DevMsg;
+import com.timon.domain.Kind;
 import com.timon.domain.Location;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,37 +30,64 @@ public class AlertProcessor {
     @Autowired
     AlertRuleEngine engine;
 
-    public List<Alert> evaluate(String json){
+
+    public boolean preCheck(String json){
         String type = (String) JsonUtil.read(json,"nbiot_type");
         if ( null == type ){
             log.error("nbiot_type not set in raw msg");
-            return null;
+            return false;
         }
 
         type = StringUtils.capitalize(type);
 
-        if ( !Device.Group550.name().equals(type) ){
-            log.info("type={} not supported yet, skip", type);
-            return null;
-        }
+//        if ( Device.valueOf(type) == null ){
+//            log.info("type={} not supported yet, skip", type);
+//            return false;
+//        }
+        // 读取指标配置
         List<MetricRecord> ml = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+type, 0, -1);
-        if ( null == ml || ml.size() ==0 )
+        if ( null == ml || ml.size() ==0 ) {
+            log.error("metric config for type={} not found", type);
+            return false;
+        }
+        return true;
+    }
+    /**
+     * 分析原始设备消息， 根据指标配置
+     * 判断是否有告警
+     * @param json
+     * @return
+     */
+    public List<Alert> evaluate(String json){
+        boolean isChecked = preCheck(json);
+        if ( !isChecked )
             return null;
         List<Alert> al = new ArrayList<Alert>();
+        String type = (String) JsonUtil.read(json,"nbiot_type");
+        type = StringUtils.capitalize(type);
+        List<MetricRecord> ml = (List<MetricRecord>)redisUtil.lGet(METRIC_PREFIX+type, 0, -1);
         for ( MetricRecord mr : ml ) {
             AlertRecord ar = engine.run(json, mr);
             if ( null != ar ) {
-                List<Location> locations = ar.getHeader().getLocation();
-                int location = 0;
+                List<Location> locations = ar.getHeader().getLocations();
+                String location = "";
                 if ( null != locations && locations.size() >= 1 ){
                     location= locations.get(locations.size()-1).getId();
                 }else
                     log.error("raw device msg has no location:{}", ar);
+                List<Kind>  kinds = ar.getHeader().getKinds();
+                String  kind = "";
+                if ( null != kinds && kinds.size() >= 1 ){
+                    kind= kinds.get(kinds.size()-1).getId();
+                }else
+                    log.trace("raw device msg has no kind:{}", ar);
+
                 Alert alert = Alert.builder(ar.header.getNbiot_sno(), ar.metric_name)
                         .level(ar.alert_level)
                         .detail(ar.message)
                         .time(ar.header.getNbiot_create_time())
                         .location(location)
+                        .kind(kind)
                         .build();
                 al.add(alert);
             }

@@ -25,4 +25,5 @@ public class AlertControllerTests {
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assert.assertNotNull(response.getBody());
     }
+
 }

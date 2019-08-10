@@ -7,6 +7,13 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class AlertUtil {
+
+    /**
+     * 根据指标配置创建一个AlertRecord
+     * @param json： 原始设备消息
+     * @param mr： 指标配置
+     * @return
+     */
     public static AlertRecord convert(String json, MetricRecord mr){
         String jpath = mr.getMetric_path();
         Object fact_value = JsonUtil.read(json, jpath);

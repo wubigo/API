@@ -41,8 +41,8 @@ public class LocalUtil {
         }
     }
 
-    public List<Integer> getLocal(String locationId){
-        List<Integer> li = (List<Integer>) redisUtil.lGet(LOCATION_PREFIX + locationId);
+    public <T> List<T> getLocal(String locationId){
+        List<T> li = (List<T>) redisUtil.lGet(LOCATION_PREFIX + locationId);
         return li;
     }
 

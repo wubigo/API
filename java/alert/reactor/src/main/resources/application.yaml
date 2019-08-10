@@ -12,9 +12,38 @@ spring:
         auto-commit-interval-ms: 1000
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      topics: timon-alert,users
-
+      topics: timon-alert,users,config
+  redis:
+    host: 172.16.16.15
+    port: 6379
+    timeout: 20000
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+        max-wait: -1
 server:
-  port: 8080
+  port: 6088
   http2:
     enabled: true
+
+device:
+  cm:
+    url: http://172.16.16.188:8090/api/device
+  class:
+    prefix: com.timon.domain
+  category: Group550, group550, TE50, Bird666, HDX, SwitchHuawei, SwitchCisco
+  msg:
+    group550:
+      type: Group550
+    bird666:
+      type: Bird666
+    TE50:
+      type: TE50
+    HDX:
+      type: HDX
+  prefix:
+    metric: "METRIC:"
+    location: "location:"
