@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.96.141.93:3306/flowable-spring-boot?characterEncoding=UTF-8
+    username: root
+    password: 0pen
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    flowable:
+      enabled: true
+flowable:
+  async-executor-activate: false
