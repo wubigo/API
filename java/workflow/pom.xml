@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<flowable.version>6.4.2</flowable.version>
+		<json-path.version>2.4.0</json-path.version>
 	</properties>
 
 	<dependencies>
@@ -26,11 +27,19 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.flowable/flowable-spring-boot-starter -->
+        <!--
 		<dependency>
 			<groupId>org.flowable</groupId>
 			<artifactId>flowable-spring-boot-starter</artifactId>
 			<version>6.4.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-ldap</artifactId>
+			<version>${flowable.version}</version>
+		</dependency>
+
 
 
 		<dependency>
@@ -44,12 +53,8 @@
 			<artifactId>flowable-spring-boot-starter-rest</artifactId>
 			<version>6.4.2</version>
 		</dependency>
+		-->
 
-		<dependency>
-			<groupId>org.flowable</groupId>
-			<artifactId>flowable-ldap</artifactId>
-			<version>${flowable.version}</version>
-		</dependency>
 
 
 		<dependency>
@@ -68,6 +73,12 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${json-path.version}</version>
 		</dependency>
 
 		<dependency>
