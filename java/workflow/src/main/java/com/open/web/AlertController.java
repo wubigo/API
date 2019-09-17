@@ -36,7 +36,11 @@ public class AlertController {
     public WebResponse<String> call(@RequestBody String ids) {
         DocumentContext jsonContext = JsonPath.parse(ids);
         String id = jsonContext.read("$.ids");
+        // engine
         String url = "http://localhost:8080/flowable-rest/service/management/engine";
+        url = "http://localhost:8080/flowable-rest/service/runtime/process-instances";
+        url = "http://localhost:8080/flowable-rest/service/repository/process-definitions";
+
         ResponseEntity<String> result = restTemplate.exchange(url, HttpMethod.GET, null, String.class);
         log.info("result={}", result.getBody());
         WebResponse<String> response = new WebResponse<>();
