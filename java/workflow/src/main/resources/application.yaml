@@ -1,9 +1,9 @@
 server:
-  port: 8088
+#  port: 8088
   http2:
     enabled: true
-  servlet:
-    contextPath: /alert
+#  servlet:
+#    contextPath: /alert
 
 spring:
   datasource:

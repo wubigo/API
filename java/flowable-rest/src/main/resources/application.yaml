@@ -1,0 +1,11 @@
+server:
+  port: 8088
+  http2:
+    enabled: true
+  servlet:
+    contextPath: /flow
+
+quota:
+  univ:
+    BIT: 2
+    HIT: 1

@@ -27,7 +27,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.flowable/flowable-spring-boot-starter -->
-        <!--
+        <!---->
 		<dependency>
 			<groupId>org.flowable</groupId>
 			<artifactId>flowable-spring-boot-starter</artifactId>
@@ -41,19 +41,26 @@
 		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/org.flowable/flowable-ui-modeler -->
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-ui-modeler</artifactId>
+			<version>${flowable.version}</version>
+			<type>pom</type>
+		</dependency>
 
 		<dependency>
 			<groupId>org.flowable</groupId>
 			<artifactId>flowable-spring-boot-starter-actuator</artifactId>
-			<version>6.4.2</version>
+			<version>${flowable.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.flowable</groupId>
 			<artifactId>flowable-spring-boot-starter-rest</artifactId>
-			<version>6.4.2</version>
+			<version>${flowable.version}</version>
 		</dependency>
-		-->
+
 
 
 
