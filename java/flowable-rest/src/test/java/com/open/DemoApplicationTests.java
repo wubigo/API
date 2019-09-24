@@ -1,6 +1,8 @@
 package com.open;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -50,7 +52,7 @@ public class DemoApplicationTests {
 	}
 
 	@Test
-	public void testApi(){
+	public void testApi() {
 		String url = "http://localhost:8080/flowable-task/process-api/runtime/process-instances";
 		url = "http://localhost:8080/flowable-task/process-api/repository/process-definitions";
 
@@ -60,8 +62,8 @@ public class DemoApplicationTests {
 	}
 
 	@Test
-	public void testJson(){
-		String name="open1";
+	public void testJson() {
+		String name = "open1";
 		JSONObject var = new JSONObject();
 
 		var.put("name", name);
@@ -70,8 +72,8 @@ public class DemoApplicationTests {
 		ja.add(var);
 
 		JSONObject o = new JSONObject();
-		o.put("key",name);
-		o.put("var",ja.toJSONString());
+		o.put("key", name);
+		o.put("var", ja.toJSONString());
 		log.info("ja={}", o.toJSONString());
 		o.put("var", ja.toString());
 		log.info("o={}", o.toString());
@@ -79,33 +81,22 @@ public class DemoApplicationTests {
 
 
 	@Test
-	public void testStartProcess(){
+	public void testStartProcess() {
 		String url = "http://localhost:8080/flowable-task/process-api/runtime/process-instances";
 		final HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 
-		//new ObjectMapper().enable(SerilizationF)
-		String name = "open1";
+
+
 		JSONObject var = new JSONObject();
-		var.put("name", "name");
-		var.put("type", "string");
-		var.put("value", name);
-//        var.put("addr", addr);
-//        var.put("ID", id);
-//        var.put("sn", sn);
-		List<JSONObject> lj = new ArrayList<>();
-		JSONArray ja = new JSONArray();
-		ja.add(var);
-		lj.add(var);
-		var = new JSONObject();
 		var.put("name", "addr");
 		var.put("type", "string");
 		var.put("value", "BIT");
-		//ja.add(var);
-		lj.add(var);
+		JSONArray ja = new JSONArray();
+		ja.add(var);
 
 		String processKey = "demo-http";
-		JSONObject o  = new JSONObject();
+		JSONObject o = new JSONObject();
 		o.put("processDefinitionKey", processKey);
 		o.put("businessKey", processKey);
 
@@ -115,7 +106,45 @@ public class DemoApplicationTests {
 		HttpEntity<String> request = new HttpEntity<String>(o.toJSONString(), headers);
 		log.debug("request={}", request);
 		String result = testRestTemplate.postForObject(url, request, String.class);
-        log.info("result={}", result);
+		log.info("result={}", result);
+	}
+
+	@Test
+	public void testQueryTask() {
+		//ProcessInstance instance = mRuntimeService.startProcessInstanceByKey("basicprocess", variables);
+		//Task userTask = mTaskService.createTaskQuery().processInstanceId(instance.getId()).taskDefinitionKey("getInput").singleResult();
+		//mTaskService.complete(userTask.getId());
+		String url = "http://localhost:8080/flowable-task/process-api/runtime/tasks/";
+
+
+
+		String result = testRestTemplate.getForObject(url + "?taskDefinitionKey=entry-form", String.class);
+		log.info("result={}", result);
+		DocumentContext jsonContext = JsonPath.parse(result);
+		String id = jsonContext.read("$.data[0].id");
+		log.info("task={}", id);
+        if ( null != id ) {
+			url += id;
+			final HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+
+
+			String name = "open1";
+			JSONObject var = new JSONObject();
+			var.put("name", "name");
+			var.put("type", "string");
+			var.put("value", name);
+			JSONArray ja = new JSONArray();
+			ja.add(var);
+			JSONObject o = new JSONObject();
+			o.put("action", "complete");
+			o.put("variables", ja);
+
+			HttpEntity<String> request = new HttpEntity<String>(o.toJSONString(), headers);
+			log.debug("request={}", request);
+			result = testRestTemplate.postForObject(url, request, String.class);
+			log.info("result={}", result);
+		}
 	}
 
 
