@@ -62,6 +62,35 @@ public class FlowController {
         return response;
     }
 
+    @GetMapping(value = "/hi")
+    public WebResponse<String> sayHi(@RequestParam(value = "name", defaultValue = "") String name) {
+
+        log.info("name={}", name);
+        WebResponse<String> response = new WebResponse<>();
+        response.setData("Welcome onboard "+name);
+        return response;
+    }
+
+    @GetMapping(value = "/")
+    public WebResponse<String> index() {
+
+
+        WebResponse<String> response = new WebResponse<>();
+        response.setData("Welcome home");
+        return response;
+    }
+
+
+
+    @GetMapping(value = "/status")
+    public ResponseEntity<String> status() {
+
+
+        WebResponse<String> response = new WebResponse<>();
+        response.setData("Welcome home");
+        return null;
+    }
+
     /**
      * start process by key and set process variable
      * from the external form

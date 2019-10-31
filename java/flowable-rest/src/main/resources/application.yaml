@@ -4,6 +4,16 @@ server:
     enabled: true
   servlet:
     contextPath: /flow
+keycloak:
+  realm: spring-no-security
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: flow
+  public-client: false
+  policy-enforcer-config:
+    enforcement-mode: ENFORCING
+  enabled: false
+
 
 quota:
   univ:
