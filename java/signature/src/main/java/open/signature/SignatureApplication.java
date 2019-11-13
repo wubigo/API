@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.UnsupportedEncodingException;
 import java.security.*;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 
 @Slf4j
 @SpringBootApplication
@@ -18,6 +21,7 @@ public class SignatureApplication {
 			// calling getKeyPair() method and assining in keypair
 			KeyPair keyPair = getKeyPair();
 			log.info("encoded public key:{}", keyPair.getPublic().getEncoded());
+			log.info("encoded private key:{}", keyPair.getPrivate().getEncoded());
 			String msg = "testmsg";
 
 			byte[] encryptedHash = sign(keyPair.getPrivate(), msg);
@@ -115,4 +119,30 @@ public class SignatureApplication {
 		// returning the key pairs
 		return kpg.genKeyPair();
 	}
+
+	private static PublicKey decode(byte[] encodedKey){
+		PublicKey publicKey = null;
+		try {
+			publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(encodedKey));
+		} catch (InvalidKeySpecException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return  publicKey;
+	}
+
+	private static PrivateKey decodePriKey(byte[] encodedKey){
+		PrivateKey privateKey = null;
+		try {
+			KeyFactory kf = KeyFactory.getInstance("RSA"); // or "EC" or whatever
+			privateKey = kf.generatePrivate(new PKCS8EncodedKeySpec(encodedKey));
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (InvalidKeySpecException e) {
+			e.printStackTrace();
+		}
+		return privateKey;
+	}
+
 }
