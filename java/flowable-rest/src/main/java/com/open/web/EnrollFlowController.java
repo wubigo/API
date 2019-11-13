@@ -78,6 +78,8 @@ public class EnrollFlowController {
 
         String url = "http://localhost:8080/flowable-task/process-api/runtime/tasks/";
 
+        String t_url = url +"?taskDefinitionKey"+taskKey;
+        log.info("t_url={}", t_url);
         String result = restTemplate.getForObject(url +"?taskDefinitionKey"+taskKey, String.class);
         log.info("result={}", result);
         jsonContext = JsonPath.parse(result);
