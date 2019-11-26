@@ -125,7 +125,7 @@ public class SignUtil {
         return  publicKey;
     }
 
-    public static PrivateKey decodePriKey(byte[] encodedKey){
+    public static PrivateKey transformPriKey(byte[] encodedKey){
         PrivateKey privateKey = null;
         try {
             KeyFactory kf = KeyFactory.getInstance("RSA"); // or "EC" or whatever
